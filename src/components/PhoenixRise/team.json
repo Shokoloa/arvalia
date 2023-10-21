@@ -1,0 +1,91 @@
+[
+    {
+        "name": "Falnix",
+        "id": "625338371207856148",
+        "birthday": "7/3",
+        "team": "gestion",
+        "role": "Propriétaire",
+        "color": "#22212f",
+        "theme": "dark",
+        "desc": "Je suis Falnix, un jeune YouTubeur, passionné de jeux d'horreurs et de fantasy. Je suis le fondateur d'Arvalia et du Phoenix Rise studio.",
+        "insta": "https://www.instagram.com/falnix_ytb/",
+        "github": "https://github.com/Falnix",
+        "ytb": "https://www.youtube.com/@Falnix"
+    },
+    {
+        "name": "Pam",
+        "id": "512294634110582792",
+        "birthday": "25/2",
+        "team": "gestion",
+        "role": "Co-propriétaire",
+        "color": "#99878d",
+        "theme": "dark",
+        "desc": "Jeune joueur abérrant, passionné de jeux d'automatismes et de farming. Le sport en montagne me passionne également."
+    },
+    {
+        "name": "Kolala",
+        "id": "761270703152300032",
+        "birthday": "28/9",
+        "team": "dev",
+        "role": "Développeur",
+        "color": "#fff",
+        "theme": "light",
+        "desc": "Je suis un jeune développeur français. Programmation en plusieurs langages, principalement en C# avec WPF.",
+        "github": "https://github.com/K0LALA"
+    },
+    {
+        "name": "Shokoloa",
+        "id": "822874698312318976",
+        "birthday": "4/9",
+        "team": "dev",
+        "role": "Développeur",
+        "color": "#fff",
+        "theme": "light",
+        "desc": "Développeur Web & GameDev, pationné de l'aérospatial !",
+        "insta": "https://www.instagram.com/shokoloa",
+        "github": "https://github.com/shokoloa",
+        "twitter": "https://twitter.com/Shoko_0ff"
+    },
+    {
+        "name": "Gnoupaille",
+        "id": "703633722049560627",
+        "birthday": "14/10",
+        "team": "design",
+        "role": "Scénariste",
+        "color": "#fff",
+        "theme": "light",
+        "desc": "Salut je m'appelle Thomas, je suis scénariste, j'écris et fais valider l'histoire du monde, soumets des désigns sous forme de croquis."
+    },
+    {
+        "name": "Drakaryx",
+        "id": "673230594036989955",
+        "birthday": "4/2",
+        "team": "design",
+        "role": "Scénariste",
+        "color": "#966f68",
+        "theme": "dark",
+        "desc": "Hey les amis ! Je suis un jeune Youtubeur et Streamer qui aide sur ce projet",
+        "ytb": "https://youtube.com/@drakaryx"
+    },
+    {
+        "name": "Rem's",
+        "id": "714869931396825200",
+        "birthday": "11/11",
+        "team": "design",
+        "role": "Modélisateur",
+        "color": "#d94733",
+        "theme": "dark",
+        "desc": "Jeune graphiste en freelance à côté de ses études passionner d'informatique et de jeux vidéo.",
+        "insta": "https://www.instagram.com/remi.dbgg/"
+    },
+    {
+        "name": "Akinoruti",
+        "id": "836012127209652265",
+        "birthday": "25/9",
+        "team": "modo",
+        "role": "Service Client",
+        "color": "#fff",
+        "theme": "light",
+        "desc": "Je suis Akinoruti un créateur de contenu français sur Discord. Je débute dans le développement Web et je suis un Badiste"
+    }
+]
