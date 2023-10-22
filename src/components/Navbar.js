@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <header id="nav-menu" aria-label="navigation bar">
-      <a className="logo" to="/">
+      <Link to="/" className="logo">
         <img src={logo} draggable={false} alt="" />
-      </a>
+      </Link>
       <section className="navcontainer">
         <article className="nav-start">
           <nav className="menu">
             <ul className="menu-bar">
-              <li><a className="nav-link" as={Link} to="/">Accueil</a></li>
-              <li><a className="nav-link" as={Link} to="/">Actualités</a></li>
-              <li><a className="nav-link" as={Link} to="/">Histoire</a></li>
-              <li className="nav-lastlink"><a className="nav-link" as={Link} to="/">Phoenix Rise</a></li>
-              <li><a className="nav-link phone" as={Link} to="/">Phoenix Rise</a></li>
+              <li><Link to="/" className="nav-link">Accueil</Link></li>
+              <li><Link to="news" className="nav-link">Actualités</Link></li>
+              <li><Link to="histoire" className="nav-link">Histoire</Link></li>
+              <li className="nav-lastlink"><Link to="/phoenix-rise" className="nav-link">Phoenix Rise</Link></li>
+              <li><Link to="/phoenix-rise" className="nav-link phone">Phoenix Rise</Link></li>
             </ul>
           </nav>
         </article>
