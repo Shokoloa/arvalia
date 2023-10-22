@@ -7,12 +7,12 @@ function Community() {
             <section className="community-items">
                 <article className="community-main">
                     <ApiData />
-                    <a className="button" as={Link} to="/"><i className="fa-brands fa-discord"></i> Rejoindre le Discord</a>
+                    <Link to="/support" className="button"><i className="fa-brands fa-discord"></i> Rejoindre le Discord</Link>
                     <p className="socials">Rejoignez nous également sur :
-                        <a as={Link} to="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i className="fa-brands fa-youtube"></i></a>
-                        <a as={Link} to="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i className="fa-brands fa-instagram"></i></a>
-                        <a as={Link} to="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i className="fa-brands fa-tiktok"></i></a>
-                        <a as={Link} to="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i className="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer"><i className="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer"><i className="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer"><i className="fa-brands fa-x-twitter"></i></a>
                     </p>
                     <div className="community-item-background" aria-hidden="true"></div>
                 </article>

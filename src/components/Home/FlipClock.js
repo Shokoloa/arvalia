@@ -194,9 +194,6 @@ function FlipClock() {
                 };
             }
 
-            // Initialise
-            var currentYear = new Date().getFullYear();
-
             // FlipClock
             new FlipClock(flipClockRef.current, {
                 endDate: new Date("Nov 1, 2024 00:00:00").getTime(),
@@ -211,9 +208,7 @@ function FlipClock() {
     }, []);
 
     return (
-        <div className="flipclock" ref={flipClockRef} id="flipclock">
-            {/* Le contenu de votre horloge FlipClock sera généré ici */}
-        </div>
+        <div className="flipclock" ref={flipClockRef} id="flipclock"></div>
     );
 }
 

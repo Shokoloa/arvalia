@@ -20,7 +20,7 @@ function RoadMap() {
               </div>
               <div className="work-item--roadmap__content">
                 <h6 className="work-item--roadmap__content__title">Téléchargez l'Epic Games Store</h6>
-                <p className="work-item--roadmap__content__text">Pour installer Arvalia, vous devrez télécharger l'<a as={Link} to="https://store.epicgames.com/fr/download">Epic Games Store</a></p>
+                <p className="work-item--roadmap__content__text">Pour installer Arvalia, vous devrez télécharger l'<a href="https://store.epicgames.com/fr/download" target="_blank" rel="noreferrer">Epic Games Store</a></p>
               </div>
             </li>
             <li className="work-item--roadmap__step">
@@ -43,7 +43,7 @@ function RoadMap() {
             </div>
             <div className="right">
               <h1>Vous avez des questions ?</h1>
-              <p as={Link} to="/">Rendez-vous sur notre FAQ <i className="uil uil-arrow-right"></i></p>
+              <Link to="/faq">Rendez-vous sur notre FAQ <i className="uil uil-arrow-right"></i></Link>
             </div>
           </article>
           <article className="helpcenter-item">
@@ -52,7 +52,7 @@ function RoadMap() {
             </div>
             <div className="right">
               <h1>Vous rencontrez un problème ?</h1>
-              <p as={Link} to="/">Rendez-vous sur notre support défié <i className="uil uil-arrow-right"></i></p>
+              <Link to="/support">Rendez-vous sur notre support défié <i className="uil uil-arrow-right"></i></Link>
             </div>
           </article>
         </section>

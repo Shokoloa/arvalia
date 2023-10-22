@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import RoadMap from "./RoadMap";
 import Community from "./Community";
 import Timer from "./Timer";
@@ -6,11 +7,15 @@ import Slideshow from "./SlideShow";
 function Home() {
   return (
     <section>
+      <Helmet>
+        <title>Arvalia</title>
+        <meta name="og:site_name" content=""></meta>
+      </Helmet>
       <main className="hero">
         <section className="hero-left">
           <h1><span>Arvalia</span> : The Awakening World</h1>
           <p>RPG Fantasy, Scénarisé & Indépendant</p>
-          <a className="downloadbutton">Rejoignez Arvalia</a>
+          <button className="downloadbutton">Rejoignez Arvalia</button>
           <article className="stats">
             <article>
               <h1>0</h1>
