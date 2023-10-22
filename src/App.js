@@ -1,46 +1,47 @@
-import React, { useState, useEffect } from "react";
-import Preloader from "../src/components/Pre";
-import Navbar from "./components/Navbar";
-import Background from "./components/Background";
-import Home from "./components/Home/Home";
-import PhoenixRise from "./components/PhoenixRise/PhoenixRise";
-import Projects from "./components/Projects/Projects";
-import Footer from "./components/Footer";
-import Resume from "./components/Resume/ResumeNew";
+import React from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Routes,
-  Navigate
+  Routes
 } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
+
+// Components
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Background from "./components/Background";
+
+// Pages
+import Home from "./components/Home/Home";
+import PhoenixRise from "./components/PhoenixRise/PhoenixRise";
+import CGU from "./components/CGU/CGU";
+import CGV from "./components/CGV/CGV";
+import FAQ from "./components/FAQ/FAQ";
+import Histoire from "./components/Histoire/Histoire";
+import News from "./components/News/News";
+import Support from "./components/Redirects/Support";
+import NotFound from "./components/404/404";
+
+// CSS
 import "./style.css";
+import "./medias.css";
 import "./App.css";
 
 function App() {
-  const [load, upadateLoad] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      upadateLoad(false);
-    }, 1200);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <Router>
-      <Preloader load={load} />
-      <div className="App text transition" id={load ? "no-scroll" : "scroll"}>
+      <div className="App text transition">
         <Navbar />
-        <ScrollToTop />
         <Background />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/project" element={<Projects />} />
           <Route path="/phoenix-rise" element={<PhoenixRise />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="*" element={<Navigate to="/"/>} />
+          <Route path="/cgu" element={<CGU />} />
+          <Route path="/cgv" element={<CGV />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/histoire" element={<Histoire />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/404" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>

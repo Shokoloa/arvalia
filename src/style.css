@@ -20,17 +20,6 @@
   --grey-color: #26292B;
   --black-color: #111;
   --light-black: #15151a;
-  --section-background-color: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.582),
-    rgba(12, 8, 24, 0.904)
-  );
-  --image-gradient: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.678),
-    rgba(12, 10, 22, 0.863)
-  );
-  --imp-text-color: #c770f0;
 }
 
 * {
@@ -140,7 +129,8 @@
   left: 0;
   width: 100%;
   z-index: 9999;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(3px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .menu-bar .nav-link {
@@ -244,6 +234,10 @@
   flex-direction: column;
 }
 
+.footerlogo {
+  width: 100px;
+}
+
 .footerlogo img {
   width: 100px;
   cursor: pointer;
@@ -269,6 +263,7 @@
 }
 
 .footer-left p a {
+  text-decoration: none;
   cursor: pointer;
   color: var(--primary-color);
   font-weight: 600;
@@ -574,6 +569,7 @@ main {
 }
 
 .work-item--roadmap__content__text a {
+  text-decoration: none;
   color: var(--primary-color);
   cursor: pointer;
   font-weight: 600;
@@ -667,7 +663,8 @@ main {
   font-size: 15px;
 }
 
-.helpcenter-item .right p {
+.helpcenter-item .right a {
+  text-decoration: none;
   color: var(--text-grey);
   font-family: inter;
   font-size: 13px;
@@ -771,6 +768,7 @@ main {
 }
 
 .community-main .button {
+  text-decoration: none;
   padding: 0.625rem 1rem;
   margin: 2.5rem auto 0 auto;
   border-radius: 0.5rem;
@@ -814,6 +812,7 @@ main {
 }
 
 .socials i {
+  color: var(--text-grey);
   margin: 0 3px;
   font-size: 18px;
   transition: all 500ms ease;
@@ -1165,12 +1164,12 @@ main {
 }
 
 .team-card-social i {
-  width: 16px;
+  width: 20px;
   display: block;
   transition: 0.3s;
 }
 
-.team-card-social a {
+.team-card-social button {
   color: var(--grey-color);
   height: 32px;
   width: 32px;
@@ -1182,14 +1181,15 @@ main {
   background-color: rgba(93, 133, 193, 0.05);
   border-radius: 50%;
   margin-right: 10px;
+  font-size: 16px;
 }
 
-.team-card-social a:hover i {
+.team-card-social button:hover i {
   color: #a02faf;
   cursor: pointer;
 }
 
-.team-card-social a:last-child {
+.team-card-social button:last-child {
   margin-right: 0;
 }
 
@@ -1413,9 +1413,10 @@ main {
   border-color: transparent transparent transparent #141414;
 }
 
-.news-card figcaption a {
-  padding: 5px;
+.news-card figcaption button {
+  padding: 7px 5px;
   border: 1px solid #ffffff;
+  background-color: transparent;
   color: #ffffff;
   border-radius: 10px;
   font-size: 0.7em;
@@ -1433,7 +1434,7 @@ main {
   transition: all 500ms ease;
 }
 
-.news-card figcaption a:hover {
+.news-card figcaption button:hover {
   opacity: 1;
 }
 
@@ -1681,7 +1682,7 @@ input.tgg-title {
   height: 24px;
   border-radius: 50px;
   background-color: #a247d3;
-  border: 6px solid #111;
+  border: 6px solid var(--grey-color);
 }
 
 .timeline__card:nth-child(even)::after {

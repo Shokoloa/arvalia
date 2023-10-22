@@ -1,0 +1,406 @@
+@media only screen and (min-width: 1024px) {
+    /*deskop*/
+}
+
+@media screen and (min-width: 767px) and (max-width:1023px) {
+    /*tablet*/
+
+    .phone {
+        display: block;
+    }
+
+    .nav-lastlink {
+        display: none;
+    }
+
+    .hero-left {
+        margin: 0 0 0 0;
+        padding: 0 20px 0 0;
+    }
+
+    #slideshow img {
+        width: 450px;
+    }
+
+    .work-layout {
+        margin: 50px 0 50px 0;
+        padding: 50px 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /*smartphone*/
+
+    .phone {
+        display: block;
+    }
+
+    /*navbar*/
+
+    #nav-menu {
+        backdrop-filter: none;
+    }
+
+    .logo img {
+        width: 75px;
+    }
+
+    .nav-lastlink {
+        display: none;
+    }
+
+    /*footer*/
+
+    .footer {
+        padding: 10px 50px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .footer-left p {
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .footer h1 {
+        font-size: 15px;
+    }
+
+    .footer-element,
+    .footer-element {
+        margin: 10 15px;
+    }
+
+    .footer-right a {
+        font-size: 13px;
+    }
+
+    .footer-element .desktop {
+        display: none;
+    }
+
+    /*index*/
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-left {
+        margin: 0 0 0 0;
+        padding: 0 20px 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 20px;
+    }
+
+    .hero h1 span {
+        font-size: 25px;
+    }
+
+    .hero p {
+        font-size: 13px;
+        margin: 0 0 20px 0;
+    }
+
+    .downloadbutton {
+        font-size: 15px;
+        width: 180px;
+    }
+
+    .hero-left .stats {
+        gap: 20px;
+    }
+
+    .hero-left .stats article h1 {
+        font-size: 16px;
+    }
+
+    .hero-left .stats article p {
+        font-size: 10px;
+    }
+
+    .hero-right {
+        margin: 0 0 0 0;
+    }
+
+    #slideshow {
+        margin: 5vh 0 10px 0;
+    }
+
+    #slideshow img {
+        width: 350px;
+        height: 250px;
+    }
+
+    .work-layout {
+        flex-direction: column;
+        margin: 50px 0 50px 0;
+        padding: 20px 20px;
+    }
+
+    .layout {
+        margin: 0 0 50px 0;
+    }
+
+    .work-item h4 {
+        font-size: 20px;
+    }
+
+    .work-item h6 {
+        font-size: 14px;
+    }
+
+    .work-item--subtitle__text {
+        font-size: 15px;
+    }
+
+    .work-item--roadmap__content__text {
+        font-size: 13px;
+    }
+
+    .helpcenter-main button {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+
+    .helpcenter-item .left {
+        margin-right: 10px;
+    }
+
+    .helpcenter-item .right h1 {
+        font-size: 14px;
+    }
+
+    .community-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: rgb(17 17 17 / 1);
+        border-radius: 1.5rem;
+        padding: 2rem 1rem;
+        overflow: hidden;
+        max-width: 1024px;
+        margin: 8vh 20px 2vh 20px;
+        z-index: 10;
+        position: relative;
+    }
+
+    .community-main h1 {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+
+    .community-main p {
+        font-size: 11px;
+        margin: 10px 0 0 0;
+    }
+
+    .socials i {
+        margin: 0 5px;
+        font-size: 16px;
+    }
+
+    .timer {
+        display: none;
+    }
+
+    /*team*/
+
+    .teamtitle {
+        font-size: 24px;
+    }
+
+    .teamnames {
+        font-size: 18px;
+    }
+
+    .teamcards {
+        gap: 20px;
+    }
+
+    .team-card {
+        margin: 0;
+        max-width: 170px;
+    }
+
+    .team-card-header {
+        height: 130px;
+    }
+
+    .team-card-header img {
+        width: 70px;
+        height: 70px;
+        transform: translateX(-50%) translateY(-44px);
+    }
+
+    .team-card-fullname {
+        font-size: 18px;
+    }
+
+    .team-card-jobtitle {
+        font-size: 10px;
+    }
+
+    .team-card-main {
+        padding-top: 5px;
+    }
+
+    .team-card-subtitle {
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+
+    .team-card-content {
+        padding: 10px;
+    }
+
+    .team-card-desc {
+        line-height: 1.2;
+        font-size: 10px;
+    }
+
+    .team-card-social {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        margin-bottom: 10px;
+    }
+
+    .studio-intro video {
+        width: 300px;
+    }
+
+    /*cgu | cgv*/
+
+    .cgu h1 {
+        font-size: 18px;
+    }
+
+    .quote {
+        width: 300px;
+        margin: 15px;
+    }
+
+    .quote img {
+        width: 30px;
+        margin: 10px 0 10px 10px;
+    }
+
+    .quote p {
+        font-size: 13px;
+        margin: 10px;
+    }
+
+    .cg-item {
+        width: 90%;
+        margin: 20px;
+        border-radius: 10px;
+    }
+
+    .markedtext {
+        font-size: 10px;
+    }
+
+    /*lore*/
+
+    .timeline {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 20px;
+    }
+
+    .lore-title {
+        margin: 20px 10px;
+    }
+}
+
+@media (max-width: 1100px) {
+    /*navbar*/
+
+    #hamburger {
+        color: var(--text-color);
+    }
+
+    .nav-end {
+        display: flex;
+        align-items: normal;
+        justify-items: normal;
+    }
+
+    .navcontainer {
+        padding: 1.8rem;
+    }
+
+    .menu {
+        position: absolute;
+        top: 87px;
+        width: 20px;
+        right: 100px;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 500ms ease;
+    }
+
+    .menu-bar .nav-link {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 500ms ease;
+    }
+
+    .menu.show {
+        background: linear-gradient(to right, rgb(137, 104, 255), rgb(175, 152, 255));
+        width: 150px;
+        right: 20px;
+        border-radius: 10px;
+        z-index: 69;
+        visibility: visible;
+        opacity: 1;
+        margin-left: -60px;
+        overflow: hidden;
+    }
+
+    .menu.show::before {
+        width: 150px;
+        height: 150px;
+        content: "";
+        background: linear-gradient(to right, rgb(137, 104, 255), rgb(175, 152, 255));
+        position: absolute;
+        z-index: -1;
+        border-radius: 50%;
+        right: -25%;
+        top: -25%;
+    }
+
+    .menu-bar {
+        display: flex;
+        align-items: normal;
+        flex-direction: column;
+        row-gap: 10px;
+        padding: 10px;
+        z-index: 999;
+    }
+
+    .menu-bar .nav-link {
+        display: flex;
+        justify-content: space-between;
+        width: 10px;
+        font-size: 13px;
+        font-family: poppins;
+        margin: 0;
+        visibility: visible;
+        opacity: 1;
+        z-index: 999;
+    }
+
+    .menu-bar>li:not(:last-child) {
+        padding-bottom: 0.5rem;
+    }
+}
