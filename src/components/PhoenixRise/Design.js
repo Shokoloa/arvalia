@@ -27,40 +27,40 @@ function Design({ data }) {
                 let socials = [];
 
                 socials.push(
-                    <a key="discord" style={{ color: iconsColor }} onClick={() => window.open(`https://discord.com/users/${user.id}`)}>
+                    <button key="discord" style={{ color: iconsColor }} onClick={() => window.open(`https://discord.com/users/${user.id}`)}>
                         <i className="fa-brands fa-discord"></i>
-                    </a>
+                    </button>
                 );
 
                 if (user.ytb) {
                     socials.push(
-                        <a key="youtube" style={{ color: iconsColor }} onClick={() => window.open(user.ytb)}>
+                        <button key="youtube" style={{ color: iconsColor }} onClick={() => window.open(user.ytb)}>
                             <i className="uil uil-youtube"></i>
-                        </a>
+                        </button>
                     );
                 }
 
                 if (user.insta) {
                     socials.push(
-                        <a key="instagram" style={{ color: iconsColor }} onClick={() => window.open(user.insta)}>
+                        <button key="instagram" style={{ color: iconsColor }} onClick={() => window.open(user.insta)}>
                             <i className="uil uil-instagram"></i>
-                        </a>
+                        </button>
                     );
                 }
 
                 if (user.github) {
                     socials.push(
-                        <a key="github" style={{ color: iconsColor }} onClick={() => window.open(user.github)}>
+                        <button key="github" style={{ color: iconsColor }} onClick={() => window.open(user.github)}>
                             <i className="uil uil-github-alt"></i>
-                        </a>
+                        </button>
                     );
                 }
 
                 if (user.twitter) {
                     socials.push(
-                        <a key="twitter" style={{ color: iconsColor }} onClick={() => window.open(user.twitter)}>
+                        <button key="twitter" style={{ color: iconsColor }} onClick={() => window.open(user.twitter)}>
                             <i className="fa-brands fa-x-twitter"></i>
-                        </a>
+                        </button>
                     );
                 }
 
