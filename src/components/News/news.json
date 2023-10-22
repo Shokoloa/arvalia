@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Mise à Jour Web v2.4",
+        "date": "24 Sept, 2023",
+        "class": "webUpdate",
+        "desc": "Refonte des pages 'communauté' et 'actualités', modification de la barre de navigation et du footer, finitions des cartes de profiles de l'équipe Phoenix Rise."
+    },
+    {
+        "name": "Mise à Jour Web v2.7",
+        "date": "04 Oct, 2023",
+        "class": "webUpdate",
+        "desc": "Refonte des pages 'phoenix-rise', 'actualités' et la page d'accueil, modification des icônes des CGV et CGU, page FAQ réparée."
+    },
+    {
+        "name": "Mise à Jour Web v3",
+        "date": "08 Oct, 2023",
+        "class": "webUpdate",
+        "desc": "Ajout d'une roadmap pour installer Arvalia et d'une zone de redirection vers des centres d'aide sur la page principale, ajout de la page 'lore'."
+    },
+    {
+        "name": "Mise à Jour Web v3.1",
+        "date": "10 Oct, 2023",
+        "class": "webUpdate",
+        "desc": "Ajout d'une page 404, page 'histoire' renommée en 'histoire', page 'communauté' déplacée sur la page d'accueil (nouveau design), mise à jour de la version mobile et tablette."
+    }
+]
