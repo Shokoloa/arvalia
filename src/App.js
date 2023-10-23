@@ -41,7 +41,7 @@ function App() {
           <Route path="/histoire" element={<Histoire />} />
           <Route path="/news" element={<News />} />
           <Route path="/support" element={<Support />} />
-          <Route path="/404" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>
