@@ -25,12 +25,12 @@ function Articles({ data }) {
 
                 return (
                     <article className={`news-card ${isExpanded ? 'news-card-active' : ''}`} key={index}>
-                        <img src={img} draggable="false" alt="" />
+                        <img src={img} draggable="false" alt="Actualité" />
                         <div className="date">
                             <p>{article.date}</p>
                         </div>
                         <figcaption>
-                            <h1>{article.name}</h1>
+                            <h6>{article.name}</h6>
                             <p className="lowDesc" style={{ display: isExpanded ? 'none' : 'flex' }}>{lowDesc}</p>
                             <p className="globalDesc" style={{ display: isExpanded ? 'flex' : 'none' }}>{article.desc}</p>
                             <button className="read-more" onClick={() => toggleArticleExpansion(index)}>
