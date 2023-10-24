@@ -42,7 +42,7 @@ function RoadMap() {
               <i className="uil uil-question-circle"></i>
             </div>
             <div className="right">
-              <h1>Vous avez des questions ?</h1>
+              <h6>Vous avez des questions ?</h6>
               <Link to="/faq">Rendez-vous sur notre FAQ <i className="uil uil-arrow-right"></i></Link>
             </div>
           </article>
@@ -51,7 +51,7 @@ function RoadMap() {
               <i className="uil uil-comment-alt-dots"></i>
             </div>
             <div className="right">
-              <h1>Vous rencontrez un problème ?</h1>
+              <h6>Vous rencontrez un problème ?</h6>
               <Link to="/support">Rendez-vous sur notre support défié <i className="uil uil-arrow-right"></i></Link>
             </div>
           </article>
