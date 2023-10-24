@@ -22,7 +22,9 @@
   --light-black: #15151a;
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -236,6 +238,7 @@
 
 .footerlogo {
   width: 100px;
+  margin-left: -20px;
 }
 
 .footerlogo img {
@@ -251,18 +254,23 @@
 }
 
 .footer-left p {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
   font-family: inter;
   font-size: 13px;
   color: var(--text-grey);
   margin: 5px 0;
 }
 
-.footer-left p i {
-  color: #a02faf;
-  margin: 0 2px;
+.footer-left p img {
+  margin: 0 3px;
+  width: 20px;
+  height: fit-content;
 }
 
 .footer-left p a {
+  margin: 0 3px;
   text-decoration: none;
   cursor: pointer;
   color: var(--primary-color);
@@ -280,7 +288,7 @@
   margin: 0 15px;
 }
 
-.footer h1 {
+.footer h6 {
   display: flex;
   text-align: center;
   font-family: poppins;
@@ -366,10 +374,78 @@ main {
   top: -30%;
   transition: all 500ms ease;
   cursor: pointer;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
 }
 
-.downloadbutton:hover {
-  box-shadow: 0 0 40px #560bad;
+.downloadbutton:focus {
+  outline: 0;
+}
+
+.downloadbutton:before,
+.downloadbutton:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+
+.downloadbutton:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #560bad 20%, transparent 20%), radial-gradient(circle, transparent 20%, #560bad 20%, transparent 30%), radial-gradient(circle, #560bad 20%, transparent 20%), radial-gradient(circle, #560bad 20%, transparent 20%), radial-gradient(circle, transparent 10%, #560bad 15%, transparent 20%), radial-gradient(circle, #560bad 20%, transparent 20%), radial-gradient(circle, #560bad 20%, transparent 20%), radial-gradient(circle, #560bad 20%, transparent 20%), radial-gradient(circle, #560bad 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+
+.downloadbutton:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #560bad 20%, transparent 20%), radial-gradient(circle, #560bad 20%, transparent 20%), radial-gradient(circle, transparent 10%, #560bad 15%, transparent 20%), radial-gradient(circle, #560bad 20%, transparent 20%), radial-gradient(circle, #560bad 20%, transparent 20%), radial-gradient(circle, #560bad 20%, transparent 20%), radial-gradient(circle, #560bad 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+
+.downloadbutton.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+
+.downloadbutton.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
 }
 
 .hero-left .stats {
@@ -384,9 +460,11 @@ main {
   margin: 20px 0 0 5px;
 }
 
-.hero-left .stats article h1 {
+.hero-left .stats article h6 {
   margin: 5px 0 0 10px;
   font-size: 20px;
+  font-family: mont;
+  color: var(--text-color);
 }
 
 .hero-left .stats article p {
@@ -407,12 +485,17 @@ main {
   margin: 10vh 20px 10px 0;
 }
 
-#slideshow img {
+#slideshow .slide {
+  display: none;
   width: 600px;
   height: 350px;
   border-radius: 20px;
   object-fit: cover;
   animation: slideshowFadeIn 1s both;
+}
+
+#slideshow .slide-active {
+  display: flex;
 }
 
 @keyframes slideshowFadeIn {
@@ -436,7 +519,7 @@ main {
   transition: all 500ms ease;
 }
 
-.active {
+.point-active {
   width: 100px;
   opacity: 1;
 }
@@ -608,7 +691,7 @@ main {
 
 .helpcenter-main button {
   margin: 20px 0 5px 0;
-  padding: 15px 40px;
+  padding: 10px 20px;
   background: transparent;
   border: 2px solid #8a817c;
   border-radius: 10px;
@@ -657,7 +740,7 @@ main {
   color: var(--primary-color);
 }
 
-.helpcenter-item .right h1 {
+.helpcenter-item .right h6 {
   color: var(--text-color);
   font-family: poppins;
   font-size: 15px;
@@ -682,6 +765,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 0 15vh 0;
 }
 
 .community-items {
@@ -747,7 +831,7 @@ main {
   animation: communityDotPing 1s cubic-bezier(0, 0, .2, 1) infinite;
 }
 
-.community-main h1 {
+.community-main h6 {
   color: var(--text-color);
   font-family: poppins;
   font-size: 25px;
@@ -770,7 +854,7 @@ main {
 .community-main .button {
   text-decoration: none;
   padding: 0.625rem 1rem;
-  margin: 2.5rem auto 0 auto;
+  margin: 1.5rem auto 0 auto;
   border-radius: 0.5rem;
   background-color: rgb(88 101 242);
   cursor: pointer;
@@ -786,7 +870,7 @@ main {
 
   75%,
   to {
-    transform: scale(2);
+    transform: scale(3);
     opacity: 0
   }
 }
@@ -813,7 +897,7 @@ main {
 
 .socials i {
   color: var(--text-grey);
-  margin: 0 3px;
+  margin: 0 4px;
   font-size: 18px;
   transition: all 500ms ease;
 }
@@ -825,7 +909,7 @@ main {
 
 /*timer*/
 
-.timer h1 {
+.timer h6 {
   margin: 5vh 0 0 0;
   text-align: center;
   color: var(--text-color);
@@ -1096,6 +1180,17 @@ main {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%) translateY(-64px);
+  animation: profilPictureSpawn 3s both;
+}
+
+@keyframes profilPictureSpawn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .team-card-fullname {
@@ -1238,10 +1333,18 @@ main {
   flex-direction: column;
 }
 
-.cgu h1 {
+.cgu h1,
+.cgu h2 {
   color: var(--text-color);
-  font-size: 25px;
   font-family: poppins;
+}
+
+.cgu h1 {
+  font-size: 25px;
+}
+
+.cgu h2 {
+  font-size: 22px;
 }
 
 .cgu p {
@@ -1438,7 +1541,8 @@ main {
   opacity: 1;
 }
 
-.news-card h1 {
+.news-card h6 {
+  font-family: poppins;
   text-align: left;
   margin: 0 0 5px 0;
   font-weight: 300;
@@ -1463,7 +1567,7 @@ main {
   color: var(--text-color);
   font-family: poppins;
   font-size: 25px;
-  margin: 50px 0 0 20px;
+  margin: 30px 0 0 20px;
 }
 
 .faq .subtitle {
@@ -1484,7 +1588,7 @@ main {
   line-height: 1.5;
 }
 
-#faq-panel h2 {
+#faq-panel h6 {
   margin: 12px 0;
 }
 
@@ -1515,7 +1619,7 @@ main {
   padding: 9px 25px 3rem;
 }
 
-.faq-content h1 {
+.faq-content h4 {
   font-size: 32px;
   text-align: center;
   font-family: poppins;
@@ -1538,7 +1642,7 @@ input.tgg-title {
   cursor: pointer;
 }
 
-.faq-accordion-title h2 {
+.faq-accordion-title h6 {
   font-size: 12px;
   font-weight: 400;
   color: var(--text-grey);
@@ -1566,7 +1670,7 @@ input.tgg-title {
   color: var(--text-color);
 }
 
-.faq-accordion .tgg-title:checked+div>label>h2 {
+.faq-accordion .tgg-title:checked+div>label>h6 {
   font-weight: 700;
 }
 
@@ -1581,12 +1685,6 @@ input.tgg-title {
 }
 
 /*lore*/
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 .timeline {
   width: 100%;
@@ -1614,6 +1712,7 @@ input.tgg-title {
 }
 
 .timeline__content-title {
+  font-size: 18px;
   font-family: poppins;
   color: var(--text-color);
 }
@@ -1690,7 +1789,7 @@ input.tgg-title {
   right: -10px;
 }
 
-.timeline__card:nth-child(even) h1 {
+.timeline__card:nth-child(even) h6 {
   text-align: right;
 }
 
@@ -1707,10 +1806,6 @@ input.tgg-title {
   font-family: poppins;
   color: var(--text-color);
   font-size: 25px;
-}
-
-.lore-title h1 i {
-  cursor: pointer;
 }
 
 .lore-title p {
