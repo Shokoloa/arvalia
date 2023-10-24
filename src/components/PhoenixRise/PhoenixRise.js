@@ -19,19 +19,19 @@ class PhoenixRise extends React.Component {
         <h1 className="teamtitle">Phoenix Rise</h1>
         <p className="teamsubtitle">Studio de développement</p>
 
-        <h1 className="teamnames">Équipe de Gestion</h1>
+        <h3 className="teamnames">Équipe de Gestion</h3>
         <Gestion data={jsonData} />
         <div className="separator" style={{ width: '50%' }}></div>
 
-        <h1 className="teamnames">Équipe de Développement</h1>
+        <h3 className="teamnames">Équipe de Développement</h3>
         <Dev data={jsonData} />
         <div className="separator" style={{ width: '50%' }}></div>
 
-        <h1 className="teamnames">Équipe de Conception</h1>
+        <h3 className="teamnames">Équipe de Conception</h3>
         <Design data={jsonData} />
         <div className="separator" style={{ width: '50%' }}></div>
 
-        <h1 className="teamnames">Équipe de Support</h1>
+        <h3 className="teamnames">Équipe de Support</h3>
         <OnlineCom data={jsonData} />
         <div className="separator" style={{ width: '50%' }}></div>
 

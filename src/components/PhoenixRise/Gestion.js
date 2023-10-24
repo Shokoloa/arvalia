@@ -72,9 +72,9 @@ function Gestion({ data }) {
                     <article className="team-card" key={index} style={{ backgroundColor: user.color }}>
                         <div className="team-card-header">
                             <div className="team-card-cover" style={{ backgroundImage: `url('https://japi.rest/discord/v1/user/${user.id}/avatar')` }}></div>
-                            <img src={`https://japi.rest/discord/v1/user/${user.id}/avatar`} draggable="false" alt="" />
-                            <h1 className="team-card-fullname" style={{ color: titleColor }}>{user.name}</h1>
-                            <h2 className="team-card-jobtitle" style={{ color: titleColor }}>{user.role}</h2>
+                            <img src={`https://japi.rest/discord/v1/user/${user.id}/avatar`} draggable="false" alt="PP" />
+                            <h5 className="team-card-fullname" style={{ color: titleColor }}>{user.name}</h5>
+                            <h6 className="team-card-jobtitle" style={{ color: titleColor }}>{user.role}</h6>
                         </div>
                         <div className="team-card-main">
                             <div className="team-card-section">
