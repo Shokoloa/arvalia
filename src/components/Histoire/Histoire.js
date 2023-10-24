@@ -17,7 +17,7 @@ function Histoire() {
                 <section className="timeline">
                     <article className="timeline__card">
                         <div className="timeline__content">
-                            <h1 className="timeline__content-title">Partie 1 - La Guerre des Cieux</h1>
+                            <h6 className="timeline__content-title">Partie 1 - La Guerre des Cieux</h6>
                             <p className="timeline__content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
                                 numquam dolorem sint fugit earum repellat explicabo ab pariatur at alias dolores, iusto beatae
                                 nostrum ex quidem blanditiis laborum. Eius, maxime.</p>
@@ -25,7 +25,7 @@ function Histoire() {
                     </article>
                     <article className="timeline__card">
                         <div className="timeline__content">
-                            <h1 className="timeline__content-title">Partie 2 - Les Pierres</h1>
+                            <h6 className="timeline__content-title">Partie 2 - Les Pierres</h6>
                             <p className="timeline__content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
                                 numquam dolorem sint fugit earum repellat explicabo ab pariatur at alias dolores, iusto beatae
                                 nostrum ex quidem blanditiis laborum. Eius, maxime.</p>
@@ -33,7 +33,7 @@ function Histoire() {
                     </article>
                     <article className="timeline__card">
                         <div className="timeline__content">
-                            <h1 className="timeline__content-title">Partie 3 - Les Lieux</h1>
+                            <h6 className="timeline__content-title">Partie 3 - Les Lieux</h6>
                             <p className="timeline__content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
                                 numquam dolorem sint fugit earum repellat explicabo ab pariatur at alias dolores, iusto beatae
                                 nostrum ex quidem blanditiis laborum. Eius, maxime.</p>
@@ -41,7 +41,7 @@ function Histoire() {
                     </article>
                     <article className="timeline__card">
                         <div className="timeline__content">
-                            <h1 className="timeline__content-title">Partie 4 - Les Classes</h1>
+                            <h6 className="timeline__content-title">Partie 4 - Les Classes</h6>
                             <p className="timeline__content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
                                 numquam dolorem sint fugit earum repellat explicabo ab pariatur at alias dolores, iusto beatae
                                 nostrum ex quidem blanditiis laborum. Eius, maxime.</p>
@@ -49,7 +49,7 @@ function Histoire() {
                     </article>
                     <article className="timeline__card">
                         <div className="timeline__content">
-                            <h1 className="timeline__content-title">Partie 5 - Les Enjeux</h1>
+                            <h6 className="timeline__content-title">Partie 5 - Les Enjeux</h6>
                             <p className="timeline__content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
                                 numquam dolorem sint fugit earum repellat explicabo ab pariatur at alias dolores, iusto beatae
                                 nostrum ex quidem blanditiis laborum. Eius, maxime.</p>
