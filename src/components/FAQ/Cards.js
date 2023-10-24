@@ -10,7 +10,7 @@ function FAQuestions({ data }) {
                         <input className="tgg-title" type="checkbox" id={`tgg-title-${index}`} />
                         <div className="faq-accordion-title">
                             <label htmlFor={`tgg-title-${index}`}>
-                                <h2>{faq.question}</h2>
+                                <h6>{faq.question}</h6>
                                 <span className="faq-arrow"></span>
                             </label>
                         </div>
