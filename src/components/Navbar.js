@@ -5,7 +5,7 @@ function NavBar() {
   return (
     <header id="nav-menu" aria-label="navigation bar">
       <Link to="/" className="logo">
-        <img src={logo} draggable={false} alt="" />
+        <img src={logo} draggable={false} alt="Logo" />
       </Link>
       <section className="navcontainer">
         <article className="nav-start">
