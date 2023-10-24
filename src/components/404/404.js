@@ -13,7 +13,7 @@ const NotFound = () => {
         <title>Arvalia | 404 Not Found</title>
         <meta name="og:site_name" content="Oh ! Il semblerait que ceci est la page 404 d'Arvalia, cette page est inutile pour vous !"></meta>
       </Helmet>
-      <main>
+      <main className="notfound">
         <div class="container">
           <div class="row">
             <div>
