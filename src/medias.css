@@ -43,7 +43,7 @@
     /*footer*/
 
     .footer {
-        padding: 10px 50px;
+        padding: 10px 50px 50px 0;
         align-items: center;
         justify-content: center;
         flex-direction: column;
@@ -54,12 +54,17 @@
         font-size: 13px;
     }
 
+    .footer-left p img {
+        width: 20px;
+        height: fit-content;
+      }
+
     .footer-right {
         display: flex;
         flex-direction: row;
     }
 
-    .footer h1 {
+    .footer h6 {
         font-size: 15px;
     }
 
@@ -118,7 +123,7 @@
     }
 
     #slideshow {
-        margin: 5vh 0 10px 0;
+        margin: 15vh 0 10px 0;
     }
 
     #slideshow .slide {
@@ -126,14 +131,23 @@
         height: 250px;
     }
 
+    .point {
+        width: 20px;
+        height: 5px;
+    }
+
+    .point-active {
+        width: 50px;
+    }
+
     .work-layout {
         flex-direction: column;
-        margin: 50px 0 50px 0;
+        margin: 50px 0 15vh 0;
         padding: 20px 20px;
     }
 
     .layout {
-        margin: 0 0 50px 0;
+        margin: 0 0 20px 0;
     }
 
     .work-item h4 {
@@ -145,7 +159,8 @@
     }
 
     .work-item--subtitle__text {
-        font-size: 15px;
+        font-size: 14px;
+        width: 80%;
     }
 
     .work-item--roadmap__content__text {
@@ -153,41 +168,29 @@
     }
 
     .helpcenter-main button {
+        margin: 5px 0 5px 0;
         padding: 10px 20px;
         font-size: 15px;
     }
 
-    .helpcenter-item .left {
-        margin-right: 10px;
-    }
-
-    .helpcenter-item .right h1 {
-        font-size: 14px;
+    .helpcenter-second {
+        display: none;
     }
 
     .community-main {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        background-color: rgb(17 17 17 / 1);
-        border-radius: 1.5rem;
+        
         padding: 2rem 1rem;
-        overflow: hidden;
-        max-width: 1024px;
-        margin: 8vh 20px 2vh 20px;
-        z-index: 10;
-        position: relative;
+        margin: 0 20px 2vh 20px;
     }
 
-    .community-main h1 {
+    .community-main h6 {
         font-size: 18px;
         margin: 0 10px;
     }
 
-    .community-main p {
+    .community-main .joinguild {
         font-size: 11px;
-        margin: 10px 0 0 0;
+        margin: 5px 0 0 0;
     }
 
     .socials i {
