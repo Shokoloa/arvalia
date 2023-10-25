@@ -18,7 +18,7 @@
         padding: 0 20px 0 0;
     }
 
-    #slideshow img {
+    #slideshow .slide {
         width: 450px;
     }
 
@@ -29,17 +29,8 @@
 }
 
 @media screen and (max-width: 767px) {
-    /*smartphone*/
-
-    .phone {
-        display: block;
-    }
 
     /*navbar*/
-
-    #nav-menu {
-        backdrop-filter: none;
-    }
 
     .logo img {
         width: 75px;
@@ -79,10 +70,6 @@
 
     .footer-right a {
         font-size: 13px;
-    }
-
-    .footer-element .desktop {
-        display: none;
     }
 
     /*index*/
@@ -134,7 +121,7 @@
         margin: 5vh 0 10px 0;
     }
 
-    #slideshow img {
+    #slideshow .slide {
         width: 350px;
         height: 250px;
     }
