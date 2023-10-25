@@ -34,7 +34,7 @@ function ApiData() {
                         <span id="api-guildpresence">{guildData ? `${guildData.presence_count} membres en ligne` : 'Chargement en cours...'}</span>
                     </p>
                     <h6>Rejoignez la communauté en ligne !</h6>
-                    <p>Rejoignez le serveur <span id="api-guildname">{guildData ? guildData.name : 'Chargement en cours...'}</span></p>
+                    <p className="joinguild">Rejoignez le serveur <span id="api-guildname">{guildData ? guildData.name : 'Chargement en cours...'}</span></p>
                 </div>
             )}
         </div>
