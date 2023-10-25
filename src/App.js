@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 
 // Components
+import Background from "./components/Background";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Background from "./components/Background";
 
 // Pages
 import Home from "./components/Home/Home";
