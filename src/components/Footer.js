@@ -5,7 +5,7 @@ function Footer() {
   let year = new Date().getFullYear();
 
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <section className="footer-left">
         <Link to="/" className="footerlogo">
           <img src={logo} draggable={false} alt="Logo" />
