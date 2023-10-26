@@ -7,6 +7,9 @@ import SVG from './SVGAnimation';
 const NotFound = () => {
   let location = useLocation();
 
+  document.querySelector("header").style.display = 'none';
+  document.querySelector("footer").style.display = 'none';
+
   return (
     <section>
       <Helmet>
