@@ -20,6 +20,28 @@ function Home() {
     };
   }, []);
 
+  var canClick = true;
+
+  var animateButton = function (e) {
+    if (canClick) {
+      canClick = false;
+      e.target.classList.add('animate');
+      setTimeout(function () {
+        e.target.classList.remove('animate');
+      }, 500);
+
+      setTimeout(function () {
+        canClick = true;
+      }, 1000);
+    }
+  };
+
+  var bubblyButtons = document.getElementsByClassName("downloadbutton");
+
+  for (var i = 0; i < bubblyButtons.length; i++) {
+    bubblyButtons[i].addEventListener('click', animateButton, false);
+  }
+
   return (
     <section>
       <Helmet>
