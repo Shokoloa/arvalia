@@ -21,6 +21,9 @@ import News from "./components/News/News";
 import Support from "./components/Redirects/Support";
 import NotFound from "./components/404/404";
 
+// Wiki
+import Wiki from "./components/wiki/Wiki";
+
 // CSS
 import "./style.css";
 import "./medias.css";
@@ -41,6 +44,9 @@ function App() {
           <Route path="/histoire" element={<Histoire />} />
           <Route path="/news" element={<News />} />
           <Route path="/support" element={<Support />} />
+          
+          <Route path="/wiki" element={<Wiki />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

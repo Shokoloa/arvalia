@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   background: radial-gradient(ellipse at bottom, #2c0735 0%, #0c0d13 100%);
-  z-index: -1000;
+  z-index: -9999;
 }
 
 .bg img {
@@ -16,7 +16,7 @@
   left: 0;
   filter: brightness(0.65);
   object-fit: cover;
-  z-index: -1000;
+  z-index: -9999;
   position: fixed;
 }
 
