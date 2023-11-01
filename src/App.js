@@ -9,6 +9,7 @@ import {
 import Background from "./components/Background";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Pages
 import Home from "./components/Home/Home";
@@ -50,9 +51,11 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
+        <ScrollToTop />
       </div>
     </Router>
   );
 }
 
 export default App;
+
