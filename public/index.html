@@ -324,11 +324,11 @@
 <script>
   // This script enables the Konami Code sequence
 
-  // Load jQuery from a CDN
-  var jqueryScript = document.createElement('script');
-  jqueryScript.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
-  jqueryScript.type = 'text/javascript';
-  jqueryScript.onload = function () {
+  // Load Zepto from a CDN
+  var zeptoScript = document.createElement('script');
+  zeptoScript.src = 'https://zeptojs.com/zepto.min.js';
+  zeptoScript.type = 'text/javascript';
+  zeptoScript.onload = function () {
     // Konami Code sequence
     var konamiCode = [
       "ArrowUp",
@@ -364,7 +364,7 @@
     });
   };
 
-  document.head.appendChild(jqueryScript);
+  document.head.appendChild(zeptoScript);
 </script>
 
 </html>
