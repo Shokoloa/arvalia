@@ -112,7 +112,7 @@
   'use strict';
 
   // Globals
-  var random = Math.random
+  let random = Math.random
     , cos = Math.cos
     , sin = Math.sin
     , PI = Math.PI
@@ -121,7 +121,7 @@
     , frame = undefined
     , confetti = [];
 
-  var particles = 10
+  let particles = 10
     , spread = 40
     , sizeMin = 3
     , sizeMax = 12 - sizeMin
@@ -134,21 +134,21 @@
     , dThetaMin = .4
     , dThetaMax = .7 - dThetaMin;
 
-  var colorThemes = [
+  let colorThemes = [
     function () {
       return color(200 * random() | 0, 200 * random() | 0, 200 * random() | 0);
     }, function () {
-      var black = 200 * random() | 0; return color(200, black, black);
+      let black = 200 * random() | 0; return color(200, black, black);
     }, function () {
-      var black = 200 * random() | 0; return color(black, 200, black);
+      let black = 200 * random() | 0; return color(black, 200, black);
     }, function () {
-      var black = 200 * random() | 0; return color(black, black, 200);
+      let black = 200 * random() | 0; return color(black, black, 200);
     }, function () {
       return color(200, 100, 200 * random() | 0);
     }, function () {
       return color(200 * random() | 0, 200, 200);
     }, function () {
-      var black = 256 * random() | 0; return color(black, black, black);
+      let black = 256 * random() | 0; return color(black, black, black);
     }, function () {
       return colorThemes[random() < .5 ? 1 : 2]();
     }, function () {
@@ -167,13 +167,13 @@
   }
 
   // Create a 1D Maximal Poisson Disc over [0, 1]
-  var radius = 1 / eccentricity, radius2 = radius + radius;
+  let radius = 1 / eccentricity, radius2 = radius + radius;
   function createPoisson() {
     // domain is the set of points which are still available to pick from
     // D = union{ [d_i, d_i+1] | i is even }
-    var domain = [radius, 1 - radius], measure = 1 - radius2, spline = [0, 1];
+    let domain = [radius, 1 - radius], measure = 1 - radius2, spline = [0, 1];
     while (measure) {
-      var dart = measure * random(), i, l, interval, a, b, c, d;
+      let dart = measure * random(), i, l, interval, a, b, c, d;
 
       // Find where dart lies
       for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
@@ -211,7 +211,7 @@
   }
 
   // Create the overarching container
-  var container = document.createElement('div');
+  let container = document.createElement('div');
   container.style.position = 'fixed';
   container.style.top = '0';
   container.style.left = '0';
@@ -227,7 +227,7 @@
     this.inner = document.createElement('div');
     this.outer.appendChild(this.inner);
 
-    var outerStyle = this.outer.style, innerStyle = this.inner.style;
+    let outerStyle = this.outer.style, innerStyle = this.inner.style;
     outerStyle.position = 'absolute';
     outerStyle.width = (sizeMin + sizeMax * random()) + 'px';
     outerStyle.height = (sizeMin + sizeMax * random()) + 'px';
@@ -254,7 +254,7 @@
     // Create the periodic spline
     this.splineX = createPoisson();
     this.splineY = [];
-    for (var i = 1, l = this.splineX.length - 1; i < l; ++i)
+    for (let i = 1, l = this.splineX.length - 1; i < l; ++i)
       this.splineY[i] = deviation * random();
     this.splineY[0] = this.splineY[l] = deviation * random();
 
@@ -265,9 +265,9 @@
       this.theta += this.dTheta * delta;
 
       // Compute spline and convert to polar
-      var phi = this.frame % 7777 / 7777, i = 0, j = 1;
+      let phi = this.frame % 7777 / 7777, i = 0, j = 1;
       while (phi >= this.splineX[j]) i = j++;
-      var rho = interpolation(
+      let rho = interpolation(
         this.splineY[i],
         this.splineY[j],
         (phi - this.splineX[i]) / (this.splineX[j] - this.splineX[i])
@@ -286,25 +286,25 @@
       // Append the container
       document.body.appendChild(container);
 
-      var theme = colorThemes[0];
-      var count = 0;
-      var endTime = Date.now() + 10000;
+      let theme = colorThemes[0];
+      let count = 0;
+      let endTime = Date.now() + 10000;
       (function addConfetto() {
         if (Date.now() < endTime) {
-          var confetto = new Confetto(theme);
+          let confetto = new Confetto(theme);
           confetti.push(confetto);
           container.appendChild(confetto.outer);
           timer = setTimeout(addConfetto, spread * random());
         }
       })(0);
 
-      var prev = undefined;
+      let prev = undefined;
       requestAnimationFrame(function loop(timestamp) {
-        var delta = prev ? timestamp - prev : 0;
+        let delta = prev ? timestamp - prev : 0;
         prev = timestamp;
-        var height = window.innerHeight;
+        let height = window.innerHeight;
 
-        for (var i = confetti.length - 1; i >= 0; --i) {
+        for (let i = confetti.length - 1; i >= 0; --i) {
           if (confetti[i].update(height, delta)) {
             container.removeChild(confetti[i].outer);
             confetti.splice(i, 1);
@@ -325,30 +325,20 @@
   // This script enables the Konami Code sequence
 
   // Load Zepto from a CDN
-  var zeptoScript = document.createElement('script');
+  let zeptoScript = document.createElement('script');
   zeptoScript.src = 'https://zeptojs.com/zepto.min.js';
   zeptoScript.type = 'text/javascript';
   zeptoScript.onload = function () {
     // Konami Code sequence
-    var konamiCode = [
-      "ArrowUp",
-      "ArrowUp",
-      "ArrowDown",
-      "ArrowDown",
-      "ArrowLeft",
-      "ArrowRight",
-      "ArrowLeft",
-      "ArrowRight",
-      "b",
-      "a",
-    ];
+    let konamiCode = [[0b0000000001000001,0b0000000001110010,0b0000000001110010,0b0000000001101111,0b0000000001110111,0b0000000001010101,0b0000000001110000],[0b0000000001000001,0b0000000001110010,0b0000000001110010,0b0000000001101111,0b0000000001110111,0b0000000001010101,0b0000000001110000],[0b0000000001000001,0b0000000001110010,0b0000000001110010,0b0000000001101111,0b0000000001110111,0b0000000001000100,0b0000000001101111,0b0000000001110111,0b0000000001101110],[0b0000000001000001,0b0000000001110010,0b0000000001110010,0b0000000001101111,0b0000000001110111,0b0000000001000100,0b0000000001101111,0b0000000001110111,0b0000000001101110],[0b0000000001000001,0b0000000001110010,0b0000000001110010,0b0000000001101111,0b0000000001110111,0b0000000001001100,0b0000000001100101,0b0000000001100110,0b0000000001110100],[0b0000000001000001,0b0000000001110010,0b0000000001110010,0b0000000001101111,0b0000000001110111,0b0000000001010010,0b0000000001101001,0b0000000001100111,0b0000000001101000,0b0000000001110100],[0b0000000001000001,0b0000000001110010,0b0000000001110010,0b0000000001101111,0b0000000001110111,0b0000000001001100,0b0000000001100101,0b0000000001100110,0b0000000001110100],[0b0000000001000001,0b0000000001110010,0b0000000001110010,0b0000000001101111,0b0000000001110111,0b0000000001010010,0b0000000001101001,0b0000000001100111,0b0000000001101000,0b0000000001110100],[0b0000000001100010],[0b0000000001100001]];
+    let decoder = new TextDecoder();
 
-    var konamiCodePosition = 0;
+    let konamiCodePosition = 0;
 
     $(document).keydown(function (e) {
       // Check if the key pressed corresponds to the next step in the Konami Code
 
-      if (e.key === konamiCode[konamiCodePosition]) {
+      if (e.key === decoder.decode(new Uint8Array(konamiCode[konamiCodePosition]))) {
         konamiCodePosition++;
 
         // If the Konami Code sequence is completed
