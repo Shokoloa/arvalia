@@ -6,56 +6,49 @@ import {
 } from "react-router-dom";
 
 // Components
-import Background from "./components/Background";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
+import { Background } from "./components/Background";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 // Pages
-import Home from "./components/Home/Home";
-import PhoenixRise from "./components/PhoenixRise/PhoenixRise";
-import CGU from "./components/CGU/CGU";
-import CGV from "./components/CGV/CGV";
-import FAQ from "./components/FAQ/FAQ";
-import Histoire from "./components/Histoire/Histoire";
-import News from "./components/News/News";
-import Support from "./components/Redirects/Support";
-import NotFound from "./components/404/404";
-
-// Wiki
-import Wiki from "./components/wiki/Wiki";
+import { Home } from "./pages/Home";
+import { PhoenixRise } from "./pages/PhoenixRise";
+import { CGU } from "./pages/CGU";
+import { CGV } from "./pages/CGV";
+import { FAQ } from "./pages/FAQ";
+import { Histoire } from "./pages/Histoire";
+import { News } from "./pages/News";
+import { Support } from "./pages/Support";
+import { NotFound } from "./pages/404";
+import { Wiki } from "./pages/Wiki";
 
 // CSS
-import "./style.css";
 import "./medias.css";
 import "./App.css";
 
-function App() {
-  return (
-    <Router>
-      <div className="App text transition">
-        <Navbar />
-        <Background />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/phoenix-rise" element={<PhoenixRise />} />
-          <Route path="/cgu" element={<CGU />} />
-          <Route path="/cgv" element={<CGV />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/histoire" element={<Histoire />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/support" element={<Support />} />
-          
-          <Route path="/wiki" element={<Wiki />} />
+export const App = () => (
+  <Router>
+    <div className="App text transition">
+      <Navbar />
+      <Background />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/phoenix-rise" element={<PhoenixRise />} />
+        <Route path="/cgu" element={<CGU />} />
+        <Route path="/cgv" element={<CGV />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/histoire" element={<Histoire />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/support" element={<Support />} />
+        
+        <Route path="/wiki" element={<Wiki />} />
 
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-        <ScrollToTop />
-      </div>
-    </Router>
-  );
-}
-
-export default App;
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+      <ScrollToTop />
+    </div>
+  </Router>
+);
 
