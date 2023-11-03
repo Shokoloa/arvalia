@@ -1,4 +1,4 @@
-import logo from "../Assets/logo/arvalia-nobg.png";
+import logo from "../assets/logo/arvalia-nobg.png";
 import { Link } from "react-router-dom";
 
 function NavBar() {

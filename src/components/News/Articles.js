@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import webUpdate from '../../Assets/news/web_update.png';
+import webUpdate from '../../assets/news/web_update.png';
 
 function Articles({ data }) {
     const [expandedArticles, setExpandedArticles] = useState([]);

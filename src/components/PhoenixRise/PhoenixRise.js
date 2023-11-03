@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import poster from '../../Assets/logo/phoenix-rise.png';
-import video from '../../Assets/images/vids/Intro_Phoenix_Rise.mp4';
+import poster from '../../assets/logo/phoenix-rise.png';
+import video from '../../assets/images/vids/Intro_Phoenix_Rise.mp4';
 import Gestion from './Gestion';
 import Dev from './Dev';
 import Design from './Design';

@@ -1,4 +1,4 @@
-import logo from "../Assets/logo/arvalia-nobg-text.png";
+import logo from "../assets/logo/arvalia-nobg-text.png";
 import { Link } from "react-router-dom";
 
 function Footer() {

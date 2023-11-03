@@ -1,6 +1,6 @@
 import React from 'react';
-import cover from '../../Assets/wiki/default-page-cover-K4LPTE6Y.png';
-import icon from '../../Assets/logo/arvalia-nobg.png';
+import cover from '../../assets/wiki/default-page-cover-K4LPTE6Y.png';
+import icon from '../../assets/logo/arvalia-nobg.png';
 
 function Wiki() {
 

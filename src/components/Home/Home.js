@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import slide1 from "../../Assets/images/pics/IMG_0351.jpg";
-import slide2 from "../../Assets/images/pics/IMG_0350.jpg";
-import slide3 from "../../Assets/images/pics/IMG_0349.jpg";
+import slide1 from "../../assets/images/pics/IMG_0351.jpg";
+import slide2 from "../../assets/images/pics/IMG_0350.jpg";
+import slide3 from "../../assets/images/pics/IMG_0349.jpg";
 import RoadMap from "./RoadMap";
 import Community from "./Community";
 import Timer from "./Timer";
