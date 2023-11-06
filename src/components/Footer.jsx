@@ -1,4 +1,5 @@
 import logo from "../assets/logo/arvalia-nobg-text.png";
+import heart from "../assets/images/heart.png";
 import { Link } from "react-router-dom";
 
 export const Footer = () => (
@@ -7,7 +8,7 @@ export const Footer = () => (
       <Link to="/" className="footerlogo">
         <img src={logo} draggable={false} alt="Logo" />
       </Link>
-      <p>Fait avec <img src="https://i.ibb.co/vhPbhYT/heart-angle-svgrepo-com.png" draggable={false} alt="" /> par <Link to="/phoenix-rise">l'équipe d'Arvalia</Link></p>
+      <p>Fait avec <img src={heart} draggable={false} alt="" /> par <Link to="/phoenix-rise">l'équipe d'Arvalia</Link></p>
       <p className="copyright">Arvalia © {new Date().getFullYear()} Tous Droits Réservés.</p>
     </section>
     <section className="footer-right">
