@@ -24,8 +24,8 @@ import { NotFound } from "./pages/404";
 import { Wiki } from "./pages/Wiki";
 
 // CSS
+import "./index.css";
 import "./medias.css";
-import "./App.css";
 
 export const App = () => (
   <Router>
