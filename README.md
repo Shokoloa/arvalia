@@ -4,7 +4,7 @@
 # Arvalia : The Awakening World
 </div>
 
-<div style="margin-top: 50px;">
+<div>
   ## Modification Actualités :
   - Modifiez le JSON en [cliquant ici](https://github.com/Shokoloa/arvalia/blob/main/src/pages/News/news.json)
 
