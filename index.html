@@ -39,78 +39,6 @@
   <script type="module" src="/src/index.jsx"></script>
 </body>
 <script>
-  function pageLoaded() {
-    let time = performance.timing;
-    let pageloadtime = time.loadEventStart - time.navigationStart;
-
-    //console.clear();
-    console.info("%cAttendez !", "color: red; font-size: 20px; padding: 10px;");
-    console.info("Si quelqu'un vous a dit de copier/coller quelque chose ici, ne le faites pas ! Il se pourrait que ce soit une tentative de fraude.");
-    console.log("Page chargée en " + pageloadtime + "ms");
-  }
-
-  window.addEventListener('load', pageLoaded)
-
-  function returnHome() {
-    window.location.href = '/'
-  }
-
-  function goToTop() {
-    window.scrollTo(0, 0);
-  }
-
-  let happyBirthdayLastCall = 0;
-
-  function happyBirthday(user) {
-    const now = Date.now();
-    const timeout = 5 * 60 * 1000;
-
-    // Check if the minimum time has passed since the last call
-    if (now - happyBirthdayLastCall >= timeout) {
-      // If the deadline is met, you can call the function
-
-      const message = {
-        content: `Un nouvel utilisateur vient de souhaiter joyeux anniversaire à ${user}`,
-        username: 'Web Logger',
-        // TODO: update this dead link BRUH
-        avatar_url: 'https://cdn.discordapp.com/icons/998280124707377223/8a49bb3db5c1aff436bf2c17405eba4d.png'
-      };
-
-      fetch('https://discord.com/api/webhooks/1160183747296120892/YRJXBIqRKbfcf9vhgCZyjoLM4z5VJkgrYKRlXwmgAznnh8y_SFiR0dRY0W-3n3MyAxQ9', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(message)
-      })
-        .then(response => {
-          // Record the moment of successful call
-          happyBirthdayLastCall = now;
-          //console.log('Webhook sent');
-        })
-        .catch(error => {
-          //console.error('Erreur : ', error);
-        });
-
-      poof();
-    } else {
-      // If the minimum time has not yet elapsed, you can ignore the call or display an error message
-      console.log('Call aborted due to anti-spam');
-    }
-  }
-
-
-  // Navbar
-  function toggleHamburger() {
-    const navMenu = document.querySelector(".menu");
-    navMenu.classList.toggle("show");
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("hamburger").addEventListener("click", toggleHamburger);
-  });
-</script>
-<script>
   'use strict';
 
   // Globals
@@ -256,6 +184,7 @@
     // Create the periodic spline
     this.splineX = createPoisson();
     this.splineY = [];
+    let i, l;
     for (let i = 1, l = this.splineX.length - 1; i < l; ++i)
       this.splineY[i] = deviation * random();
     this.splineY[0] = this.splineY[l] = deviation * random();
@@ -324,34 +253,85 @@
   }
 </script>
 <script>
-  // This script enables the Konami Code sequence
+  function pageLoaded() {
+    let time = performance.timing;
+    let pageloadtime = time.loadEventStart - time.navigationStart;
 
-  // Load Zepto from a CDN
+    //console.clear();
+    console.info("%cAttendez !", "color: red; font-size: 20px; padding: 10px;");
+    console.info("Si quelqu'un vous a dit de copier/coller quelque chose ici, ne le faites pas ! Il se pourrait que ce soit une tentative de fraude.");
+    console.log("Page chargée en " + pageloadtime + "ms");
+  }
+
+  window.addEventListener('load', pageLoaded)
+
+  function happyBirthday(user, id) {
+    let happyBirthdayLastCall = 0;
+    const now = Date.now();
+    const timeout = 5 * 60 * 1000;
+
+    if (now - happyBirthdayLastCall >= timeout) {
+
+      const message = {
+        content: `Un nouvel utilisateur vient de souhaiter joyeux anniversaire à ${user}`,
+        username: `${user}`,
+        avatar_url: `https://japi.rest/discord/v1/user/${id}/avatar`
+      };
+
+      fetch('https://discord.com/api/webhooks/1160183747296120892/YRJXBIqRKbfcf9vhgCZyjoLM4z5VJkgrYKRlXwmgAznnh8y_SFiR0dRY0W-3n3MyAxQ9', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(message)
+      })
+        .then(response => {
+          happyBirthdayLastCall = now;
+          //console.log('Webhook sent');
+        })
+        .catch(error => {
+          //console.error('Erreur : ', error);
+        });
+
+      poof();
+    } else {
+      console.log('Call aborted due to anti-spam');
+    }
+  }
+
+  // Navbar
+  function toggleHamburger() {
+    const navMenu = document.querySelector(".menu");
+    navMenu.classList.toggle("show");
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("hamburger").addEventListener("click", toggleHamburger);
+  });
+</script>
+<script>
   let zeptoScript = document.createElement('script');
   zeptoScript.src = 'https://zeptojs.com/zepto.min.js';
   zeptoScript.type = 'text/javascript';
   zeptoScript.onload = function () {
-    // Konami Code sequence
     let konamiCode = '1000001111001011100101101111111011110101011110000O1000001111001011100101101111111011110101011110000O100000111100101110010110111111101111000100110111111101111101110O100000111100101110010110111111101111000100110111111101111101110O100000111100101110010110111111101111001100110010111001101110100O1000001111001011100101101111111011110100101101001110011111010001110100O100000111100101110010110111111101111001100110010111001101110100O1000001111001011100101101111111011110100101101001110011111010001110100O1100010O1100001'.split('O');
     let decoder = new TextDecoder();
 
     let konamiCodePosition = 0;
 
     $(document).keydown(function (e) {
-      // Check if the key pressed corresponds to the next step in the Konami Code
 
       if (e.key === decoder.decode(new Uint8Array(konamiCode[konamiCodePosition].match(/.{1,7}/g).map((c) => parseInt(c, 2))))) {
         konamiCodePosition++;
 
-        // If the Konami Code sequence is completed
         if (konamiCodePosition === konamiCode.length) {
           console.log("Konami Code Enabled");
-          konamiCodePosition = 0; // Reset position
+          konamiCodePosition = 0;
 
           window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
         }
       } else {
-        konamiCodePosition = 0; // Resets the position if an incorrect key is pressed
+        konamiCodePosition = 0;
       }
     });
   };
