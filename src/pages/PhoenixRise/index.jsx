@@ -2,10 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import poster from '../../assets/logo/phoenix-rise.png';
 import video from '../../assets/images/vids/Intro_Phoenix_Rise.mp4';
-import { Gestion } from './Gestion';
-import { Dev } from './Dev';
-import { Design } from './Design';
-import { OnlineCom } from './OnlineCom';
+import { Card } from './Card';
 import jsonData from './team.json';
 
 export const PhoenixRise = () => (
@@ -18,19 +15,19 @@ export const PhoenixRise = () => (
     <p className="teamsubtitle">Studio de développement</p>
 
     <h3 className="teamnames">Équipe de Gestion</h3>
-    <Gestion data={jsonData} />
+    <Card data={jsonData} team="gestion" />
     <div className="separator" style={{ width: '50%' }}></div>
 
     <h3 className="teamnames">Équipe de Développement</h3>
-    <Dev data={jsonData} />
+    <Card data={jsonData} team="dev" />
     <div className="separator" style={{ width: '50%' }}></div>
 
     <h3 className="teamnames">Équipe de Conception</h3>
-    <Design data={jsonData} />
+    <Card data={jsonData} team="design" />
     <div className="separator" style={{ width: '50%' }}></div>
 
     <h3 className="teamnames">Équipe de Support</h3>
-    <OnlineCom data={jsonData} />
+    <Card data={jsonData} team="modo" />
     <div className="separator" style={{ width: '50%' }}></div>
 
     <section className="studio-intro">
@@ -40,4 +37,3 @@ export const PhoenixRise = () => (
     </section>
   </section>
 );
-
