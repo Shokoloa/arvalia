@@ -37,9 +37,8 @@
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <script type="module" src="/src/index.jsx"></script>
-</body>
 <script>
-  function pageLoaded() {
+  window.addEventListener('load', () => {
     let time = performance.timing;
     let pageloadtime = time.loadEventStart - time.navigationStart;
 
@@ -47,17 +46,7 @@
     console.info("%cAttendez !", "color: red; font-size: 20px; padding: 10px;");
     console.info("Si quelqu'un vous a dit de copier/coller quelque chose ici, ne le faites pas ! Il se pourrait que ce soit une tentative de fraude.");
     console.log("Page chargée en " + pageloadtime + "ms");
-  }
-
-  window.addEventListener('load', pageLoaded)
-
-  function returnHome() {
-    window.location.href = '/'
-  }
-
-  function goToTop() {
-    window.scrollTo(0, 0);
-  }
+  })
 
   let happyBirthdayLastCall = 0;
 
@@ -98,9 +87,6 @@
       console.log('Call aborted due to anti-spam');
     }
   }
-</script>
-<script>
-  'use strict';
 
   // Globals
   let random = Math.random
@@ -245,6 +231,7 @@
     // Create the periodic spline
     this.splineX = createPoisson();
     this.splineY = [];
+    let i, l;
     for (let i = 1, l = this.splineX.length - 1; i < l; ++i)
       this.splineY[i] = deviation * random();
     this.splineY[0] = this.splineY[l] = deviation * random();
@@ -311,41 +298,35 @@
       });
     }
   }
-</script>
-<script>
-  // This script enables the Konami Code sequence
 
-  // Load Zepto from a CDN
   let zeptoScript = document.createElement('script');
   zeptoScript.src = 'https://zeptojs.com/zepto.min.js';
   zeptoScript.type = 'text/javascript';
   zeptoScript.onload = function () {
-    // Konami Code sequence
     let konamiCode = '1000001111001011100101101111111011110101011110000O1000001111001011100101101111111011110101011110000O100000111100101110010110111111101111000100110111111101111101110O100000111100101110010110111111101111000100110111111101111101110O100000111100101110010110111111101111001100110010111001101110100O1000001111001011100101101111111011110100101101001110011111010001110100O100000111100101110010110111111101111001100110010111001101110100O1000001111001011100101101111111011110100101101001110011111010001110100O1100010O1100001'.split('O');
     let decoder = new TextDecoder();
 
     let konamiCodePosition = 0;
 
-    $(document).keydown(function (e) {
-      // Check if the key pressed corresponds to the next step in the Konami Code
+    $(document).keydown((e) => {
 
       if (e.key === decoder.decode(new Uint8Array(konamiCode[konamiCodePosition].match(/.{1,7}/g).map((c) => parseInt(c, 2))))) {
         konamiCodePosition++;
 
-        // If the Konami Code sequence is completed
         if (konamiCodePosition === konamiCode.length) {
           console.log("Konami Code Enabled");
-          konamiCodePosition = 0; // Reset position
+          konamiCodePosition = 0;
 
           window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
         }
       } else {
-        konamiCodePosition = 0; // Resets the position if an incorrect key is pressed
+        konamiCodePosition = 0;
       }
     });
   };
 
   document.head.appendChild(zeptoScript);
 </script>
+</body>
 
 </html>

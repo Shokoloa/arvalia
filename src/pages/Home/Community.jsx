@@ -8,10 +8,11 @@ export const Community = () => (
         <ApiData />
         <Link to="/support" className="button"><i className="fa-brands fa-discord"></i> Rejoindre le Discord</Link>
         <p className="socials">Rejoignez nous également sur :
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer"><i className="fa-brands fa-youtube"></i></a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer"><i className="fa-brands fa-tiktok"></i></a>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer"><i className="fa-brands fa-x-twitter"></i></a>
+          <span>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer"><i className="fa-brands fa-youtube"></i></a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer"><i className="fa-brands fa-tiktok"></i></a>
+          </span>
         </p>
         <div className="community-item-background" aria-hidden="true"></div>
       </article>

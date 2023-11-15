@@ -23,17 +23,6 @@
         "desc": "Jeune joueur abérrant, passionné de jeux d'automatismes et de farming. Le sport en montagne me passionne également."
     },
     {
-        "name": "Kolala",
-        "id": "761270703152300032",
-        "birthday": "28/9",
-        "team": "dev",
-        "role": "Développeur",
-        "color": "#fff",
-        "theme": "light",
-        "desc": "Je suis un jeune développeur français. Programmation en plusieurs langages, principalement en C# avec WPF.",
-        "github": "https://github.com/K0LALA"
-    },
-    {
         "name": "Shokoloa",
         "id": "822874698312318976",
         "birthday": "4/9",
@@ -47,6 +36,19 @@
         "twitter": "https://twitter.com/Shoko_0ff"
     },
     {
+        "name": "Le Baka Sable :3",
+        "id": "1021458784142499990",
+        "birthday": "0/0",
+        "team": "dev",
+        "role": "Développeur",
+        "color": "#fff",
+        "theme": "light",
+        "desc": "J'ai pas d'idées et vu qu'il répond pas bah nique sa maman",
+        "github": "https://github.com/lebakasable",
+        "insta": "https://www.instagram.com/hugo.golito",
+        "twitter": "https://twitter.com/HugOwOlito"
+    },
+    {
         "name": "Gnoupaille",
         "id": "703633722049560627",
         "birthday": "14/10",
@@ -55,17 +57,6 @@
         "color": "#fff",
         "theme": "light",
         "desc": "Salut je m'appelle Thomas, je suis scénariste, j'écris et fais valider l'histoire du monde, soumets des désigns sous forme de croquis."
-    },
-    {
-        "name": "Drakaryx",
-        "id": "673230594036989955",
-        "birthday": "4/2",
-        "team": "design",
-        "role": "Scénariste",
-        "color": "#966f68",
-        "theme": "dark",
-        "desc": "Hey les amis ! Je suis un jeune Youtubeur et Streamer qui aide sur ce projet",
-        "ytb": "https://youtube.com/@drakaryx"
     },
     {
         "name": "Rem's",

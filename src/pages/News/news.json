@@ -1,17 +1,5 @@
 [
     {
-        "name": "Mise à Jour Web v2.4",
-        "date": "24 Sept, 2023",
-        "class": "webUpdate",
-        "desc": "Refonte des pages 'communauté' et 'actualités', modification de la barre de navigation et du footer, finitions des cartes de profiles de l'équipe Phoenix Rise."
-    },
-    {
-        "name": "Mise à Jour Web v2.7",
-        "date": "04 Oct, 2023",
-        "class": "webUpdate",
-        "desc": "Refonte des pages 'phoenix-rise', 'actualités' et la page d'accueil, modification des icônes des CGV et CGU, page FAQ réparée."
-    },
-    {
         "name": "Mise à Jour Web v3",
         "date": "08 Oct, 2023",
         "class": "webUpdate",
@@ -22,5 +10,11 @@
         "date": "10 Oct, 2023",
         "class": "webUpdate",
         "desc": "Ajout d'une page 404, page 'histoire' renommée en 'histoire', page 'communauté' déplacée sur la page d'accueil (nouveau design), mise à jour de la version mobile et tablette."
+    },
+    {
+        "name": "Mise à Jour Web v4",
+        "date": "12 Nov, 2023",
+        "class": "webUpdate",
+        "desc": "Refonte du site côté développeur, modifications design page d'accueil, modification de l'équipe dans /phoenix-rise, modification du logo"
     }
 ]
