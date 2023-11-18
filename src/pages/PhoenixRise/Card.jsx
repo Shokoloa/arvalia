@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Card = ({ data, team }) => (
     <div className="teamcards">
         {data.filter(user => user.team === team).map((user, index) => {

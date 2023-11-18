@@ -13,320 +13,305 @@
   <meta name="theme-color" content="#df00bd" />
   <link rel="icon" href="/favicon.png" />
 
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="Arvalia">
-  <meta itemprop="description"
-    content="Un jeu indépendant sur un thème RPG Fantasy, unique et innovant, scénarisé avec des mécaniques complètes.">
-
-  <!-- Facebook Meta Tags -->
-  <meta property="og:title" content="Arvalia">
-  <meta property="og:description"
-    content="Un jeu indépendant sur un thème RPG Fantasy, unique et innovant, scénarisé avec des mécaniques complètes.">
-  <meta property="og:image" content="/favicon.png">
-
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:title" content="Arvalia">
-  <meta name="twitter:description"
-    content="Un jeu indépendant sur un thème RPG Fantasy, unique et innovant, scénarisé avec des mécaniques complètes.">
-
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <script src="https://kit.fontawesome.com/6e61d25d8a.js" crossorigin="anonymous"></script>
+  <script defer type="module" src="/src/entry-client.jsx"></script>
+  <!--app-head-->
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-  <script type="module" src="/src/index.jsx"></script>
-<script>
-  window.addEventListener('load', () => {
-    let time = performance.timing;
-    let pageloadtime = time.loadEventStart - time.navigationStart;
+  <div id="app"><!--app-html--></div>
+  <script>
+    window.addEventListener('load', () => {
+      let time = performance.timing;
+      let pageloadtime = time.loadEventStart - time.navigationStart;
 
-    //console.clear();
-    console.info("%cAttendez !", "color: red; font-size: 20px; padding: 10px;");
-    console.info("Si quelqu'un vous a dit de copier/coller quelque chose ici, ne le faites pas ! Il se pourrait que ce soit une tentative de fraude.");
-    console.log("Page chargée en " + pageloadtime + "ms");
-  })
+      //console.clear();
+      console.info("%cAttendez !", "color: red; font-size: 20px; padding: 10px;");
+      console.info("Si quelqu'un vous a dit de copier/coller quelque chose ici, ne le faites pas ! Il se pourrait que ce soit une tentative de fraude.");
+      console.log("Page chargée en " + pageloadtime + "ms");
+    })
 
-  let happyBirthdayLastCall = 0;
+    let happyBirthdayLastCall = 0;
 
-  function happyBirthday(user) {
-    const now = Date.now();
-    const timeout = 5 * 60 * 1000;
+    function happyBirthday(user) {
+      const now = Date.now();
+      const timeout = 5 * 60 * 1000;
 
-    // Check if the minimum time has passed since the last call
-    if (now - happyBirthdayLastCall >= timeout) {
-      // If the deadline is met, you can call the function
+      // Check if the minimum time has passed since the last call
+      if (now - happyBirthdayLastCall >= timeout) {
+        // If the deadline is met, you can call the function
 
-      const message = {
-        content: `Un nouvel utilisateur vient de souhaiter joyeux anniversaire à ${user}`,
-        username: 'Web Logger',
-        // TODO: update this dead link BRUH
-        avatar_url: 'https://cdn.discordapp.com/icons/998280124707377223/8a49bb3db5c1aff436bf2c17405eba4d.png'
-      };
+        const message = {
+          content: `Un nouvel utilisateur vient de souhaiter joyeux anniversaire à ${user}`,
+          username: 'Web Logger',
+          // TODO: update this dead link BRUH
+          avatar_url: 'https://cdn.discordapp.com/icons/998280124707377223/8a49bb3db5c1aff436bf2c17405eba4d.png'
+        };
 
-      fetch('https://discord.com/api/webhooks/1160183747296120892/YRJXBIqRKbfcf9vhgCZyjoLM4z5VJkgrYKRlXwmgAznnh8y_SFiR0dRY0W-3n3MyAxQ9', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(message)
-      })
-        .then(response => {
-          // Record the moment of successful call
-          happyBirthdayLastCall = now;
-          //console.log('Webhook sent');
+        fetch('https://discord.com/api/webhooks/1160183747296120892/YRJXBIqRKbfcf9vhgCZyjoLM4z5VJkgrYKRlXwmgAznnh8y_SFiR0dRY0W-3n3MyAxQ9', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(message)
         })
-        .catch(error => {
-          //console.error('Erreur : ', error);
-        });
+          .then(response => {
+            // Record the moment of successful call
+            happyBirthdayLastCall = now;
+            //console.log('Webhook sent');
+          })
+          .catch(error => {
+            //console.error('Erreur : ', error);
+          });
 
-      poof();
-    } else {
-      // If the minimum time has not yet elapsed, you can ignore the call or display an error message
-      console.log('Call aborted due to anti-spam');
-    }
-  }
-
-  // Globals
-  let random = Math.random
-    , cos = Math.cos
-    , sin = Math.sin
-    , PI = Math.PI
-    , PI2 = PI * 2
-    , timer = undefined
-    , frame = undefined
-    , confetti = [];
-
-  let particles = 10
-    , spread = 40
-    , sizeMin = 3
-    , sizeMax = 12 - sizeMin
-    , eccentricity = 10
-    , deviation = 100
-    , dxThetaMin = -.1
-    , dxThetaMax = -dxThetaMin - dxThetaMin
-    , dyMin = .13
-    , dyMax = .18
-    , dThetaMin = .4
-    , dThetaMax = .7 - dThetaMin;
-
-  let colorThemes = [
-    function () {
-      return color(200 * random() | 0, 200 * random() | 0, 200 * random() | 0);
-    }, function () {
-      let black = 200 * random() | 0; return color(200, black, black);
-    }, function () {
-      let black = 200 * random() | 0; return color(black, 200, black);
-    }, function () {
-      let black = 200 * random() | 0; return color(black, black, 200);
-    }, function () {
-      return color(200, 100, 200 * random() | 0);
-    }, function () {
-      return color(200 * random() | 0, 200, 200);
-    }, function () {
-      let black = 256 * random() | 0; return color(black, black, black);
-    }, function () {
-      return colorThemes[random() < .5 ? 1 : 2]();
-    }, function () {
-      return colorThemes[random() < .5 ? 3 : 5]();
-    }, function () {
-      return colorThemes[random() < .5 ? 2 : 4]();
-    }
-  ];
-  function color(r, g, b) {
-    return 'rgb(' + r + ',' + g + ',' + b + ')';
-  }
-
-  // Cosine interpolation
-  function interpolation(a, b, t) {
-    return (1 - cos(PI * t)) / 2 * (b - a) + a;
-  }
-
-  // Create a 1D Maximal Poisson Disc over [0, 1]
-  let radius = 1 / eccentricity, radius2 = radius + radius;
-  function createPoisson() {
-    // domain is the set of points which are still available to pick from
-    // D = union{ [d_i, d_i+1] | i is even }
-    let domain = [radius, 1 - radius], measure = 1 - radius2, spline = [0, 1];
-    while (measure) {
-      let dart = measure * random(), i, l, interval, a, b, c, d;
-
-      // Find where dart lies
-      for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
-        a = domain[i], b = domain[i + 1], interval = b - a;
-        if (dart < measure + interval) {
-          spline.push(dart += a - measure);
-          break;
-        }
-        measure += interval;
+        poof();
+      } else {
+        // If the minimum time has not yet elapsed, you can ignore the call or display an error message
+        console.log('Call aborted due to anti-spam');
       }
-      c = dart - radius, d = dart + radius;
-
-      // Update the domain
-      for (i = domain.length - 1; i > 0; i -= 2) {
-        l = i - 1, a = domain[l], b = domain[i];
-        // c---d          c---d  Do nothing
-        //   c-----d  c-----d    Move interior
-        //   c--------------d    Delete interval
-        //         c--d          Split interval
-        //       a------b
-        if (a >= c && a < d)
-          if (b > d) domain[l] = d; // Move interior (Left case)
-          else domain.splice(l, 2); // Delete interval
-        else if (a < c && b > c)
-          if (b <= d) domain[i] = c; // Move interior (Right case)
-          else domain.splice(i, 0, c, d); // Split interval
-      }
-
-      // Re-measure the domain
-      for (i = 0, l = domain.length, measure = 0; i < l; i += 2)
-        measure += domain[i + 1] - domain[i];
     }
 
-    return spline.sort();
-  }
+    // Globals
+    let random = Math.random
+      , cos = Math.cos
+      , sin = Math.sin
+      , PI = Math.PI
+      , PI2 = PI * 2
+      , timer = undefined
+      , frame = undefined
+      , confetti = [];
 
-  // Create the overarching container
-  let container = document.createElement('div');
-  container.style.position = 'fixed';
-  container.style.top = '0';
-  container.style.left = '0';
-  container.style.width = '100%';
-  container.style.height = '0';
-  container.style.overflow = 'visible';
-  container.style.zIndex = '9999';
+    let particles = 10
+      , spread = 40
+      , sizeMin = 3
+      , sizeMax = 12 - sizeMin
+      , eccentricity = 10
+      , deviation = 100
+      , dxThetaMin = -.1
+      , dxThetaMax = -dxThetaMin - dxThetaMin
+      , dyMin = .13
+      , dyMax = .18
+      , dThetaMin = .4
+      , dThetaMax = .7 - dThetaMin;
 
-  // Confetto constructor
-  function Confetto(theme) {
-    this.frame = 0;
-    this.outer = document.createElement('div');
-    this.inner = document.createElement('div');
-    this.outer.appendChild(this.inner);
+    let colorThemes = [
+      function () {
+        return color(200 * random() | 0, 200 * random() | 0, 200 * random() | 0);
+      }, function () {
+        let black = 200 * random() | 0; return color(200, black, black);
+      }, function () {
+        let black = 200 * random() | 0; return color(black, 200, black);
+      }, function () {
+        let black = 200 * random() | 0; return color(black, black, 200);
+      }, function () {
+        return color(200, 100, 200 * random() | 0);
+      }, function () {
+        return color(200 * random() | 0, 200, 200);
+      }, function () {
+        let black = 256 * random() | 0; return color(black, black, black);
+      }, function () {
+        return colorThemes[random() < .5 ? 1 : 2]();
+      }, function () {
+        return colorThemes[random() < .5 ? 3 : 5]();
+      }, function () {
+        return colorThemes[random() < .5 ? 2 : 4]();
+      }
+    ];
+    function color(r, g, b) {
+      return 'rgb(' + r + ',' + g + ',' + b + ')';
+    }
 
-    let outerStyle = this.outer.style, innerStyle = this.inner.style;
-    outerStyle.position = 'absolute';
-    outerStyle.width = (sizeMin + sizeMax * random()) + 'px';
-    outerStyle.height = (sizeMin + sizeMax * random()) + 'px';
-    innerStyle.width = '100%';
-    innerStyle.height = '100%';
-    innerStyle.backgroundColor = theme();
+    // Cosine interpolation
+    function interpolation(a, b, t) {
+      return (1 - cos(PI * t)) / 2 * (b - a) + a;
+    }
 
-    outerStyle.perspective = '50px';
-    outerStyle.transform = 'rotate(' + (360 * random()) + 'deg)';
-    this.axis = 'rotate3D(' +
-      cos(360 * random()) + ',' +
-      cos(360 * random()) + ',0,';
-    this.theta = 360 * random();
-    this.dTheta = dThetaMin + dThetaMax * random();
-    innerStyle.transform = this.axis + this.theta + 'deg)';
+    // Create a 1D Maximal Poisson Disc over [0, 1]
+    let radius = 1 / eccentricity, radius2 = radius + radius;
+    function createPoisson() {
+      // domain is the set of points which are still available to pick from
+      // D = union{ [d_i, d_i+1] | i is even }
+      let domain = [radius, 1 - radius], measure = 1 - radius2, spline = [0, 1];
+      while (measure) {
+        let dart = measure * random(), i, l, interval, a, b, c, d;
 
-    this.x = window.innerWidth * random();
-    this.y = -deviation;
-    this.dx = sin(dxThetaMin + dxThetaMax * random());
-    this.dy = dyMin + dyMax * random();
-    outerStyle.left = this.x + 'px';
-    outerStyle.top = this.y + 'px';
-
-    // Create the periodic spline
-    this.splineX = createPoisson();
-    this.splineY = [];
-    let i, l;
-    for (let i = 1, l = this.splineX.length - 1; i < l; ++i)
-      this.splineY[i] = deviation * random();
-    this.splineY[0] = this.splineY[l] = deviation * random();
-
-    this.update = function (height, delta) {
-      this.frame += delta;
-      this.x += this.dx * delta;
-      this.y += this.dy * delta;
-      this.theta += this.dTheta * delta;
-
-      // Compute spline and convert to polar
-      let phi = this.frame % 7777 / 7777, i = 0, j = 1;
-      while (phi >= this.splineX[j]) i = j++;
-      let rho = interpolation(
-        this.splineY[i],
-        this.splineY[j],
-        (phi - this.splineX[i]) / (this.splineX[j] - this.splineX[i])
-      );
-      phi *= PI2;
-
-      outerStyle.left = this.x + rho * cos(phi) + 'px';
-      outerStyle.top = this.y + rho * sin(phi) + 'px';
-      innerStyle.transform = this.axis + this.theta + 'deg)';
-      return this.y > height + deviation;
-    };
-  }
-
-  function poof() {
-    if (!frame) {
-      // Append the container
-      document.body.appendChild(container);
-
-      let theme = colorThemes[0];
-      let count = 0;
-      let endTime = Date.now() + 10000;
-      (function addConfetto() {
-        if (Date.now() < endTime) {
-          let confetto = new Confetto(theme);
-          confetti.push(confetto);
-          container.appendChild(confetto.outer);
-          timer = setTimeout(addConfetto, spread * random());
-        }
-      })(0);
-
-      let prev = undefined;
-      requestAnimationFrame(function loop(timestamp) {
-        let delta = prev ? timestamp - prev : 0;
-        prev = timestamp;
-        let height = window.innerHeight;
-
-        for (let i = confetti.length - 1; i >= 0; --i) {
-          if (confetti[i].update(height, delta)) {
-            container.removeChild(confetti[i].outer);
-            confetti.splice(i, 1);
+        // Find where dart lies
+        for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
+          a = domain[i], b = domain[i + 1], interval = b - a;
+          if (dart < measure + interval) {
+            spline.push(dart += a - measure);
+            break;
           }
+          measure += interval;
+        }
+        c = dart - radius, d = dart + radius;
+
+        // Update the domain
+        for (i = domain.length - 1; i > 0; i -= 2) {
+          l = i - 1, a = domain[l], b = domain[i];
+          // c---d          c---d  Do nothing
+          //   c-----d  c-----d    Move interior
+          //   c--------------d    Delete interval
+          //         c--d          Split interval
+          //       a------b
+          if (a >= c && a < d)
+            if (b > d) domain[l] = d; // Move interior (Left case)
+            else domain.splice(l, 2); // Delete interval
+          else if (a < c && b > c)
+            if (b <= d) domain[i] = c; // Move interior (Right case)
+            else domain.splice(i, 0, c, d); // Split interval
         }
 
-        if (Date.now() < endTime || confetti.length) {
-          frame = requestAnimationFrame(loop);
+        // Re-measure the domain
+        for (i = 0, l = domain.length, measure = 0; i < l; i += 2)
+          measure += domain[i + 1] - domain[i];
+      }
+
+      return spline.sort();
+    }
+
+    // Create the overarching container
+    let container = document.createElement('div');
+    container.style.position = 'fixed';
+    container.style.top = '0';
+    container.style.left = '0';
+    container.style.width = '100%';
+    container.style.height = '0';
+    container.style.overflow = 'visible';
+    container.style.zIndex = '9999';
+
+    // Confetto constructor
+    function Confetto(theme) {
+      this.frame = 0;
+      this.outer = document.createElement('div');
+      this.inner = document.createElement('div');
+      this.outer.appendChild(this.inner);
+
+      let outerStyle = this.outer.style, innerStyle = this.inner.style;
+      outerStyle.position = 'absolute';
+      outerStyle.width = (sizeMin + sizeMax * random()) + 'px';
+      outerStyle.height = (sizeMin + sizeMax * random()) + 'px';
+      innerStyle.width = '100%';
+      innerStyle.height = '100%';
+      innerStyle.backgroundColor = theme();
+
+      outerStyle.perspective = '50px';
+      outerStyle.transform = 'rotate(' + (360 * random()) + 'deg)';
+      this.axis = 'rotate3D(' +
+        cos(360 * random()) + ',' +
+        cos(360 * random()) + ',0,';
+      this.theta = 360 * random();
+      this.dTheta = dThetaMin + dThetaMax * random();
+      innerStyle.transform = this.axis + this.theta + 'deg)';
+
+      this.x = window.innerWidth * random();
+      this.y = -deviation;
+      this.dx = sin(dxThetaMin + dxThetaMax * random());
+      this.dy = dyMin + dyMax * random();
+      outerStyle.left = this.x + 'px';
+      outerStyle.top = this.y + 'px';
+
+      // Create the periodic spline
+      this.splineX = createPoisson();
+      this.splineY = [];
+      let i, l;
+      for (let i = 1, l = this.splineX.length - 1; i < l; ++i)
+        this.splineY[i] = deviation * random();
+      this.splineY[0] = this.splineY[l] = deviation * random();
+
+      this.update = function (height, delta) {
+        this.frame += delta;
+        this.x += this.dx * delta;
+        this.y += this.dy * delta;
+        this.theta += this.dTheta * delta;
+
+        // Compute spline and convert to polar
+        let phi = this.frame % 7777 / 7777, i = 0, j = 1;
+        while (phi >= this.splineX[j]) i = j++;
+        let rho = interpolation(
+          this.splineY[i],
+          this.splineY[j],
+          (phi - this.splineX[i]) / (this.splineX[j] - this.splineX[i])
+        );
+        phi *= PI2;
+
+        outerStyle.left = this.x + rho * cos(phi) + 'px';
+        outerStyle.top = this.y + rho * sin(phi) + 'px';
+        innerStyle.transform = this.axis + this.theta + 'deg)';
+        return this.y > height + deviation;
+      };
+    }
+
+    function poof() {
+      if (!frame) {
+        // Append the container
+        document.body.appendChild(container);
+
+        let theme = colorThemes[0];
+        let count = 0;
+        let endTime = Date.now() + 10000;
+        (function addConfetto() {
+          if (Date.now() < endTime) {
+            let confetto = new Confetto(theme);
+            confetti.push(confetto);
+            container.appendChild(confetto.outer);
+            timer = setTimeout(addConfetto, spread * random());
+          }
+        })(0);
+
+        let prev = undefined;
+        requestAnimationFrame(function loop(timestamp) {
+          let delta = prev ? timestamp - prev : 0;
+          prev = timestamp;
+          let height = window.innerHeight;
+
+          for (let i = confetti.length - 1; i >= 0; --i) {
+            if (confetti[i].update(height, delta)) {
+              container.removeChild(confetti[i].outer);
+              confetti.splice(i, 1);
+            }
+          }
+
+          if (Date.now() < endTime || confetti.length) {
+            frame = requestAnimationFrame(loop);
+          } else {
+            document.body.removeChild(container);
+            frame = undefined;
+          }
+        });
+      }
+    }
+
+    let zeptoScript = document.createElement('script');
+    zeptoScript.src = 'https://zeptojs.com/zepto.min.js';
+    zeptoScript.type = 'text/javascript';
+    zeptoScript.onload = function () {
+      let konamiCode = '1000001111001011100101101111111011110101011110000O1000001111001011100101101111111011110101011110000O100000111100101110010110111111101111000100110111111101111101110O100000111100101110010110111111101111000100110111111101111101110O100000111100101110010110111111101111001100110010111001101110100O1000001111001011100101101111111011110100101101001110011111010001110100O100000111100101110010110111111101111001100110010111001101110100O1000001111001011100101101111111011110100101101001110011111010001110100O1100010O1100001'.split('O');
+      let decoder = new TextDecoder();
+
+      let konamiCodePosition = 0;
+
+      $(document).keydown((e) => {
+
+        if (e.key === decoder.decode(new Uint8Array(konamiCode[konamiCodePosition].match(/.{1,7}/g).map((c) => parseInt(c, 2))))) {
+          konamiCodePosition++;
+
+          if (konamiCodePosition === konamiCode.length) {
+            console.log("Konami Code Enabled");
+            konamiCodePosition = 0;
+
+            window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+          }
         } else {
-          document.body.removeChild(container);
-          frame = undefined;
+          konamiCodePosition = 0;
         }
       });
-    }
-  }
+    };
 
-  let zeptoScript = document.createElement('script');
-  zeptoScript.src = 'https://zeptojs.com/zepto.min.js';
-  zeptoScript.type = 'text/javascript';
-  zeptoScript.onload = function () {
-    let konamiCode = '1000001111001011100101101111111011110101011110000O1000001111001011100101101111111011110101011110000O100000111100101110010110111111101111000100110111111101111101110O100000111100101110010110111111101111000100110111111101111101110O100000111100101110010110111111101111001100110010111001101110100O1000001111001011100101101111111011110100101101001110011111010001110100O100000111100101110010110111111101111001100110010111001101110100O1000001111001011100101101111111011110100101101001110011111010001110100O1100010O1100001'.split('O');
-    let decoder = new TextDecoder();
-
-    let konamiCodePosition = 0;
-
-    $(document).keydown((e) => {
-
-      if (e.key === decoder.decode(new Uint8Array(konamiCode[konamiCodePosition].match(/.{1,7}/g).map((c) => parseInt(c, 2))))) {
-        konamiCodePosition++;
-
-        if (konamiCodePosition === konamiCode.length) {
-          console.log("Konami Code Enabled");
-          konamiCodePosition = 0;
-
-          window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-        }
-      } else {
-        konamiCodePosition = 0;
-      }
-    });
-  };
-
-  document.head.appendChild(zeptoScript);
-</script>
+    document.head.appendChild(zeptoScript);
+  </script>
 </body>
 
 </html>

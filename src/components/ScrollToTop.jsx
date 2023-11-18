@@ -1,11 +1,12 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect } from "preact/hooks";
+import { useWindow } from '../hooks/useWindow';
 
 export const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const win = useWindow();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (win)
+      win.scrollTo(0, 0);
+  }, []);
 }
 

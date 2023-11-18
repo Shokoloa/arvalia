@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo } from "preact/hooks";
 
 export const Timer = () => {
   const targetDate = useMemo(() => new Date("Nov 1, 2024 00:00:00").getTime(), []);

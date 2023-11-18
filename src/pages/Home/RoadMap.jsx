@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export const RoadMap = () => (
   <section className="work-layout">
     <article id="how-it-works" className="layout">
@@ -42,7 +40,7 @@ export const RoadMap = () => (
           </div>
           <div className="right">
             <h6>Vous avez des questions ?</h6>
-            <Link to="/faq">Rendez-vous sur notre FAQ <i className="uil uil-arrow-right"></i></Link>
+            <a href="/faq">Rendez-vous sur notre FAQ <i className="uil uil-arrow-right"></i></a>
           </div>
         </article>
         <article className="helpcenter-item">
@@ -51,7 +49,7 @@ export const RoadMap = () => (
           </div>
           <div className="right">
             <h6>Vous rencontrez un problème ?</h6>
-            <Link to="/support">Rendez-vous sur notre support défié <i className="uil uil-arrow-right"></i></Link>
+            <a href="/support">Rendez-vous sur notre support défié <i className="uil uil-arrow-right"></i></a>
           </div>
         </article>
       </section>

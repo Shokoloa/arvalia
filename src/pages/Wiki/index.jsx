@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'preact/hooks';
 import cover from '../../assets/wiki/default-page-cover-K4LPTE6Y.png';
 import icon from '../../assets/logo/arvalia-nobg.png';
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'preact/hooks';
 import webUpdate from '../../assets/news/web_update.jpg';
 
 export const Articles = ({ data }) => {

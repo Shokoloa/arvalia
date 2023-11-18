@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "preact/hooks";
 import gsap from "gsap";
 
 const SVGCode = `

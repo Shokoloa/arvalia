@@ -1,41 +1,40 @@
 import logo from "../assets/logo/arvalia-nobg-text.png";
 import heart from "../assets/images/heart.png";
-import { Link } from "react-router-dom";
 
 export const Footer = () => (
   <footer className="footer" id="footer">
     <section className="footer-left">
-      <Link to="/" className="footerlogo">
+      <a href="/" className="footerlogo">
         <img src={logo} draggable={false} alt="Logo" />
-      </Link>
-      <p>Fait avec <img src={heart} draggable={false} alt="" /> par <Link to="/phoenix-rise">l'équipe d'Arvalia</Link></p>
+      </a>
+      <p>Fait avec <img src={heart} draggable={false} alt="" /> par <a href="/phoenix-rise">l'équipe d'Arvalia</a></p>
       <p className="copyright">Arvalia © {new Date().getFullYear()} Tous Droits Réservés.</p>
     </section>
     <section className="footer-right">
       <article className="footer-element">
         <h6>Ressources</h6>
         <div className="footerlinks">
-          <Link to="/faq">
+          <a href="/faq">
             <i className="uil uil-file-question-alt"></i>
             <p>FAQ</p>
-          </Link>
-          <Link to="/wiki">
+          </a>
+          <a href="/wiki">
             <i className="uil uil-book-alt"></i>
             <p>Wiki</p>
-          </Link>
+          </a>
         </div>
       </article>
       <article className="footer-element">
         <h6>Chartes</h6>
         <div className="footerlinks">
-          <Link to="/cgu">
+          <a href="/cgu">
             <i className="uil uil-shield-check"></i>
             <p>CGU</p>
-          </Link>
-          <Link to="/cgv">
+          </a>
+          <a href="/cgv">
             <i className="uil uil-usd-circle"></i>
             <p>CGV</p>
-          </Link>
+          </a>
         </div>
       </article>
     </section>

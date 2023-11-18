@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const FAQuestions = ({ data }) => (
   <div id="faq-panel">
     {data.map((faq, index) => {

@@ -1,17 +1,20 @@
-import { Helmet } from 'react-helmet';
+import { useEffect } from 'preact/hooks';
+import { useDocument } from '../../hooks/useDocument';
 
 export const Support = () => {
+  const doc = useDocument();
+
+  useEffect(() => {
+    if (doc)
+      doc.title = 'Arvalia | Support';
+  }, []);
+
   return (
-    <>
-      <Helmet>
-        <title>Arvalia | Support</title>
-        <meta name="og:site_name" content="Rejoindre le support de la communauté en ligne sur Discord"></meta>
-        <meta http-equiv="refresh" content="0; URL=https://discord.com/invite/jKRdY7MHP5"></meta>
-      </Helmet>
+    <section>
       <main>
         <p style={{ color: 'white'}}>Vous êtes en train d'être redirigé</p>
       </main>
-    </>
+    </section>
   );
 }
 

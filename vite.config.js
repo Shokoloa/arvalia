@@ -1,11 +1,15 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { createRequire } from 'module';
+import { defineConfig } from 'vite';
+import preact from '@preact/preset-vite';
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  base: '',
-  plugins: [react()],
-  server: {    
-    open: true,
-    port: 3000, 
-  },
-})
+  plugins: [
+    preact({
+      babel: {
+        // Change cwd to load Preact Babel plugins
+        cwd: createRequire(import.meta.url).resolve('@preact/preset-vite')
+      }
+    })
+  ]
+});

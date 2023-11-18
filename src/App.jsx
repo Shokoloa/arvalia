@@ -1,9 +1,5 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes
-} from "react-router-dom";
+import Router from "preact-router";
+import { useWindow } from './hooks/useWindow';
 
 // Components
 import { Background } from "./components/Background";
@@ -27,28 +23,33 @@ import { Wiki } from "./pages/Wiki";
 import "./index.css";
 import "./medias.css";
 
-export const App = () => (
-  <Router>
+export const App = () => {
+  const win = useWindow();
+
+  return (
     <div className="App text transition">
       <Navbar />
       <Background />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/phoenix-rise" element={<PhoenixRise />} />
-        <Route path="/cgu" element={<CGU />} />
-        <Route path="/cgv" element={<CGV />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/histoire" element={<Histoire />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/support" element={<Support />} />
+      <Router onChange={() => {
+        if (win)
+          win.scrollTo(0, 0);
+      }
+      }>
+        <Home path="/" />
+        <PhoenixRise path="/phoenix-rise" />
+        <CGU path="/cgu" />
+        <CGV path="/cgv" />
+        <FAQ path="/faq" />
+        <Histoire path="/histoire" />
+        <News path="/news" />
+        <Support path="/support" />
         
-        <Route path="/wiki" element={<Wiki />} />
+        <Wiki path="/wiki" />
 
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+        <NotFound default />
+      </Router>
       <Footer />
-      <ScrollToTop />
     </div>
-  </Router>
-);
+  );
+};
 

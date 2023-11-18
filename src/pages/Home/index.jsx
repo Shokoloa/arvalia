@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
 import slide1 from "../../assets/images/pics/IMG_0351.jpg";
 import slide2 from "../../assets/images/pics/IMG_0350.jpg";
 import slide3 from "../../assets/images/pics/IMG_0349.jpg";
 import { RoadMap } from "./RoadMap";
 import { Community } from "./Community";
 import { Timer } from "./Timer";
+import { useState, useEffect } from 'preact/hooks';
+import { useDocument } from '../../hooks/useDocument';
 
 export const Home = () => {
   const [activeSlide, setActiveSlide] = useState(1);
+  const doc = useDocument();
 
   useEffect(() => {
+    if (doc)
+      doc.title = 'Arvalia';
+
     const slideshowInterval = setInterval(() => {
       setActiveSlide((prevActiveSlide) => (prevActiveSlide % 3) + 1);
     }, 5000);
@@ -34,16 +38,14 @@ export const Home = () => {
     }
   };
 
-  let bubblyButtons = document.getElementsByClassName("downloadbutton");
-  for (let i = 0; i < bubblyButtons.length; i++)
-    bubblyButtons[i].addEventListener('click', animateButton, false);
+  if (doc) {
+    let bubblyButtons = doc.getElementsByClassName("downloadbutton");
+    for (let i = 0; i < bubblyButtons.length; i++)
+      bubblyButtons[i].addEventListener('click', animateButton, false);
+  }
 
   return (
     <section>
-      <Helmet>
-        <title>Arvalia</title>
-        <meta name="og:site_name" content="" />
-      </Helmet>
       <main className="hero">
         <section className="hero-left">
           <h1><span>Arvalia</span> : The Awakening World</h1>
