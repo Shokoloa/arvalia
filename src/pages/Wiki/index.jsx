@@ -1,12 +1,17 @@
 import { useEffect } from 'preact/hooks';
 import cover from '../../assets/wiki/default-page-cover-K4LPTE6Y.png';
 import icon from '../../assets/logo/arvalia-nobg.png';
+import { useDocument } from '../../hooks/useDocument';
 
 export const Wiki = () => {
+  const doc = useDocument();
+
   useEffect(() => {
-    document.getElementById('nav-menu').style.display = 'none';
-    document.getElementById('footer').style.display = 'none';
-    document.getElementById('bg').style.display = 'none';
+    if (doc) {
+      doc.getElementById('nav-menu').style.display = 'none';
+      doc.getElementById('footer').style.display = 'none';
+      doc.getElementById('bg').style.display = 'none';
+    }
   });
 
   return (
